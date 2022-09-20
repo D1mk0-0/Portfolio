@@ -1,0 +1,115 @@
+// main: ../style.less
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    /*Выставим по центру*/
+    align-items: center;
+    /*Пропишем высоту*/
+    height: 100%;
+
+    //Делаем падающий нав бар (Бургер)
+    @media @mobile {
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1000;
+
+        background-color: #fff;
+
+        box-shadow: 0 5px 10px fade(@black, 70%);
+
+        text-align: center;
+
+        display: none;
+
+        &.show {
+            display: flex;
+
+            
+        }
+    }
+
+}
+
+.nav__link {
+
+    margin-left: 2rem;
+    position: relative;
+
+    /*Установим размер шрифта 14 / 15 = 0.93 */
+    font-size: 0.93rem;
+    color: @black;
+    /*Установим все буквы БОЛЬШИЕ*/
+    text-transform: uppercase;
+    /*И жирный шрифт*/
+    font-weight: 700;
+    /*Убираем нижнее подчеркивание*/
+    text-decoration: none;
+
+    /*Создаем псевдоэлемент, который будет динамичным*/
+    &:after {
+        content: "";
+        //Высота и ширина полоски. Сначала длина будет 0, а при наведении возрастет
+        width: 0;
+        height: 2px;
+        background-color: @black;
+
+        //Размещаем ее снизу
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        z-index: 1;
+
+        //Установим транзишн - свойство полоски для длины, времени и линейной функции. 
+        transition: width .2s linear;
+    }
+
+    /*Установим динамичное действие при наводе мышки*/
+    /*&:hover {
+        border-color: @black;
+    }*/
+
+    /*Активное действие при наведении. Включается псевдокласс hover (за исключением класса nav__link--btn)*/
+    &:hover:not(.nav__link--btn) {
+        &:after {
+            // Динамика полоски при наведении. Ширина увеличивается  
+            width: 100%;
+        }
+
+        ;
+    }
+
+    // Для кнопки установим педдинги (Модификаторы)
+    &--btn {
+        /*Установим педдинги по шире 10 и 30px */
+        padding: 0.66rem 2rem;
+        /*Делаем обводку*/
+        border: 2px solid @black;
+        /*Округляем края*/
+        border-radius: 20px;
+
+        //Зададим плавность для кнопки
+        transition: background-color .2s linear, color .2s linear;
+
+        //Установим динамику кнопки
+        &:hover {
+            background-color: @black;
+            //Установим цвет текста
+            color: @white;
+        }
+
+        @media @mobile {
+            border: none;
+        }
+    }
+
+    @media @mobile {
+        width: 100%;
+        margin-left: 0;
+        padding: .5rem 1rem;
+    }
+}

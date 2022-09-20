@@ -1,0 +1,26 @@
+// main: ../style.less
+
+//Падающаяя меню на гаджетах
+
+.burger {
+    //Размры
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    border: 0;
+    background: none;
+
+    //Сначала скрываем
+    display: none;
+
+    //А при медиа запросе показываем
+    @media @mobile {
+        display: block;
+    }
+}
+
+.burger__icon {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}

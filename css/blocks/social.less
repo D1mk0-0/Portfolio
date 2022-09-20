@@ -1,0 +1,31 @@
+// main: ../style.less
+
+//Блок для ярлыков месседжеров
+
+.social {
+    display: flex;
+    //Установим отступ под 
+    margin-bottom: 42px;
+    
+    @media @mobile {
+        justify-content: center;
+    }
+}
+
+.social__link {
+    margin-right: 10px;
+    text-decoration: none;
+
+    //Динамика кнопок (Плавность)
+    transition: transform .2s linear;
+
+
+    //Подъем при наведении
+    &:hover {
+        transform: translateY(-5px);
+    }
+} 
+
+
+
+

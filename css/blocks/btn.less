@@ -1,0 +1,107 @@
+// main: ../style.less
+
+.btn {
+    //Сделаем инлайн-блочными
+    display: inline-block;
+    //Надо почитать про это:
+    vertical-align: top;
+    //Пропишем рамку 1 - сверху/снизу 2 - слева/справа (Поставим в em что ы они были изменяемые, но теперь размер кнопки зависит от размера шрифта)
+    padding: 1em 1.7em;
+    //Пропишем минимальную длину кнопки 
+    min-width: 180px;
+    
+
+    //Установим границу
+    border: 1px solid @gray;
+    //Закруглим границу
+    border-radius: 30px;
+    //background: none;
+    background-color: @white;
+
+    //Укажем изменение курсора на ладошки при наведении
+    cursor: pointer;
+
+    //Укажем шрифт, который унаследовается у родителя:
+    font-family: inherit;
+    //Размер шрифта
+    font-size: 1.06rem;
+    //Тоже почитать 
+    line-height: 1.1;
+    //Цвет
+    color: @black;
+    //Все буквы большие
+    text-transform: uppercase;
+    //Убираем декорацию 
+    text-decoration: none;
+    //Установим текст по центру
+    text-align: center;
+
+    //Пропишем плавную динамику 1 - для фона 2 - время 3 - функция + тень
+    transition: background-color .2s linear, box-shadow .2s linear, border-color .2s linear;
+
+    //Уберем оутлайн при фокусе
+    &:focus {
+        outline: none;
+    }
+
+    //Пишем динамику кнопок. При наводе фон меняется на черный а цвет на белый
+    &:hover {
+        background-color: @black;
+        //Пропишем тень для кнопки. 1 - сдвиг по оси X 2 - сдвиг по оси Y 3 - размытие + 4 -тень в fade
+        box-shadow: 2px 2px 10px fade(#000, 24%);
+        //Цвет текста при динамике
+        color: @white;
+        border-color: @black;
+    }
+
+    //Установим расстояние и обыграем кнопки. Если кнопка идет за кнопкой, то будет работать:
+    + .btn {
+        margin-left: 1rem;
+    }
+
+    //Модификаторы кнопки
+    &--sm {
+        min-width: 120px;
+        //Размер 14px
+        font-size: .90rem;
+        //Размер шрифта
+        font-weight: 700;
+        //Гранца потолще
+        border-width: 2px;
+        text-transform: uppercase;
+    }
+
+    //Модфикатор для кнопок в резюме
+    &--thin {
+        //Меняем минимальную длину
+        min-width: 145px;
+
+        font-size: .8rem;
+
+    }
+
+    //Медиа запрос для адаптации
+    @media @tablet {
+        //Уменьшаем размер шрифта кнопки
+        font-size: 1rem;
+        //И отступы поменьше
+        padding: .8em 1.4em;
+        //Минимальную ширину тоже изменим
+        min-width: 140px;
+    }
+
+    //@media @mobile {
+    //    display: block;
+    //    width: 100%;
+//
+    //    + .btm {
+    //        margin-left: 0;
+    //        margin-top: 1rem;
+    //    }
+    //}
+
+    @media @mobile {
+        min-width: 120px;
+    }
+}
+

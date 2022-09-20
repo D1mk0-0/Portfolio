@@ -1,0 +1,122 @@
+// main: ../style.less
+
+//Стилизуем подвал
+.footer {
+    //Отсутп всерху и снизу по 20px
+    padding: 1rem 0;
+    background-color: @black;
+}
+
+.footer__inner {
+    display: flex;
+    flex-wrap: wrap;
+    //Чтобы разбросать контент по сторонам
+    justify-content: space-between;
+}
+
+//Делаем кнопки в один ряд с меседжерами
+.footer__credits {
+    display: flex;
+    //Выравниваем по центру по вертикали
+    align-items: center;
+
+    @media @tablet {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    @media @mobile-sm {
+        flex-direction: column;
+    }
+}
+
+.footer__copyright {
+    //Добавим отступ от созданной нами границы
+    padding-right: .8rem;
+    //Отступ от кнопочек
+    margin-right: 1rem;
+    
+    font-size: .94rem;
+    color: @gray-light;
+
+    //Установим полоску справа от надписи с помощью границы справа
+    border-right: 1px solid fade(@gray, 35%);
+
+    @media @mobile-sm {
+        margin-right: 0;
+        margin-bottom: 1rem;
+        border-right: 0;
+    }
+}
+
+//Стилизуем кнопочки
+.footer__social {
+    //Делаем чуток пониже, что бы были вровень
+    margin-bottom: -5px;
+    //Делаем контейнером
+    display: flex;
+    align-items: center;
+
+
+    //Убираем декорацию ссылок
+    a {
+        //Установим отступ справа
+        margin-right: 1.2rem;
+        text-decoration: none;
+
+        @media @tablet {
+            margin: 0 .5rem;
+        }
+    }
+}
+
+.footer__nav {
+    //Чтобы раскидать кнопки, те что справа
+    display: flex;
+    //Выравниваем все елементы по центру вертикально
+    align-items: center;
+    font-size: .94rem;
+
+    @media @tablet {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
+
+//Стилизуем ссылки
+.footer__nav-link {
+    margin-right: 1.5rem;
+    color: @gray-light;
+    text-decoration: none;
+
+    &:hover {
+        text-decoration: underline;
+    }
+
+    //Модификатор кнопки
+    &--btn {
+        text-decoration: none;
+        text-transform: uppercase;
+        //Установим педдинги 1-сверху/снизу 2-слева/справа
+        padding: .5rem 1.4rem ;
+        color: @gray-light;
+        //Закругляем границу
+        border-radius: 20px;
+        //Делаем границу
+        border: 1px solid @gray-light;
+
+        //Делавем правильную динамику кнопки в footer
+        &:hover {
+            text-decoration: none;
+            background-color: @gray-light;
+            border-color: @gray-light;
+            color: @black;
+        }
+    }
+
+    @media @tablet {
+        margin: 0 .5rem .5rem;
+    }
+}

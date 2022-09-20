@@ -1,0 +1,63 @@
+// main: ../style.less
+
+//Блок для подписи под работой
+
+
+.work {
+    //Скрываем то, что вылезает за рамку
+    overflow: hidden;
+    //Закругляем
+    border-radius: 10px;
+    //Пропшем тени для блока work
+    box-shadow: 0 0 4px fade(#000, 25%);
+
+    //Плавность для динамичой тени
+    transition: box-shadow .2s linear;
+
+    //Делаем динамку блока при наведении
+    &:hover {
+        //Делаем тень больше
+        box-shadow: 0 0 25px fade(#000, 30%);
+    }
+
+    @media @mobile {
+        max-width: 370px;
+    }
+
+    @media @mobile-sm {
+        margin: 0 auto;
+    }
+}
+
+.work__image {
+    //Делаем картинк адаптивной
+    //Модель блочная 
+    display: block;
+    //Максимальная ширина
+    min-width: 100%;
+    //Высота авто
+    height: auto;
+}
+
+//Стилизуем блок work__content
+.work__content {
+    //Отступы 1 - верх/низ 2 - лево/право
+    padding: 1rem 0.8rem;
+}
+
+//Стилизуем категории
+.work__cat {
+    //Проише внуреннй отступ
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: @black;
+    text-transform: uppercase;
+}
+
+//Стилизуем опсание 
+.work__title {
+    font-size: 1.06rem;
+    color: @black;
+    text-transform: uppercase;
+    font-weight: 700;
+}

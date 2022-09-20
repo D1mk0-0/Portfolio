@@ -1,0 +1,61 @@
+// main: ../style.less
+
+//Стили для последнего окна
+
+.contact {
+    display: flex;
+    background: url(https://place-hold.it/480x700) right center no-repeat;
+
+    @media @tablet {
+        background: url(https://place-hold.it/380x700) right center no-repeat;
+
+    }
+
+    @media @mobile {
+        background: none;
+    }
+}
+
+.contact__left {
+    width: 47%;
+    padding: 2rem;
+
+    @media @mobile {
+        width: 100%;
+        padding: 1rem;
+    }
+}
+
+
+.contact__info {
+    margin: 2rem 0 3rem;
+    padding: 0;
+    //Убираем иллюстрицию списка
+    list-style: none;
+
+    font-size: .94rem;
+    color: @black;
+    font-weight: 300;
+}
+
+.contact__info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: .75rem;
+
+    //У последнего элемента убираем отступ
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.contact__info-icon {
+    margin-right: .75rem;
+}
+
+.modal__subtitle {
+    text-transform: uppercase;
+    font-size: 1.06rem;
+    color: @black;
+    font-weight: 400;
+}

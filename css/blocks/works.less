@@ -1,0 +1,34 @@
+// main: ../style.less
+
+//Блок с работами
+
+.works {
+    //Пропишем отступы 40px =2.8 rem 1 - верх/низ 2 - лево/право
+    margin: 2.8rem 0;
+}
+
+//Теперь делаеи кнопки навигации 
+.works__nav {
+    //Нужно почитать за модель дисплеев
+    display: flex;
+    //Устанавлваем выравнвание 
+    justify-content: center;
+    //Неболшой отступ снизу
+    margin-bottom: 1.2rem;
+}
+
+.works__nav-link {
+    //Добавим отступы друг от друга 1 - верх/низ 2 - лево/право (На глаз)
+    margin: 0 1.2rem ;
+    //Размер шрифта 12px = 0.8rem
+    font-style: .8rem;
+    //Цвет black но непрозрачность 70% по этому fade
+    color: fade(@black, 70%);
+    //Удираем декорацю подчеркивания
+    text-decoration: none;
+
+    //А при наведении будем показыать 
+    &:hover {
+        text-decoration: underline;
+    }
+}

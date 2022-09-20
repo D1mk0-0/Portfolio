@@ -1,0 +1,33 @@
+// main: ../style.less
+
+// Блок с работами
+
+.portfolio {
+    //Все еще не понял
+    display: flex;
+    //Разрешает переосить работы на новую строку:
+    flex-wrap: wrap;
+    //Пропищем отрицательный отступ для этих ячеек, что бы было вровень с полоской
+    margin: 0 -1rem 2.8rem;
+
+    justify-content: space-evenly;
+}
+
+//Установим параметры для всех наших ячеек
+.portfolio__col {
+    //Вместо прописания ширины используем flex-basis - надо почитать
+    flex-basis: 33.33333%;
+    //Пропишем отступы 1 - все стороны
+    padding: 1rem;
+
+    //Медиа запрос адапации для телефона
+    @media @mobile {
+        flex-basis: 50%;
+    }
+
+    @media @mobile-sm {
+        flex-basis: 100%;
+        padding: 0;
+        margin: 1rem;
+    }
+}

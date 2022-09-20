@@ -1,0 +1,56 @@
+// main: ../style.less
+
+.form__group {
+    margin-bottom: 1.8rem;
+}
+
+.form__label {
+    //Чтобы сделать отступ дя лейбла нужен:
+    display: inline-block;
+    margin-bottom: .6rem;
+    margin-left: 1.8rem;
+
+    font-size: .8rem;
+    color: @black;
+    font-weight: 700;
+}
+
+//Инпуты будут блочными элементами
+.form__input,
+.form__textarea {
+    display: block;
+    //input имеет свой размер по умолчанию, который надо изменить
+    width: 100%;
+
+    padding: 1.4rem 1.8rem;
+
+    border: 1px solid fade(#707070, 30%);
+    border-radius: 1.8rem;
+
+    //Унаследуем от родителя шрифты
+    font-family: inherit;
+    font-size: .8rem;
+    line-height: 1.2;
+    font-weight: 300;
+    color: @black;
+
+    //Сделаем динамку плавной 
+    transition: border-color .2s linear;
+
+    //При фокусе измеим границы
+    &:focus {
+        outline: none;
+        border-color: @black;
+    }
+
+    //Для плейсхолдеров поменяем цвет
+    &::placeholder {
+        color: @black;
+    }
+}
+
+.form__textarea {
+    height: 200px;
+    //Уберем возможность растягивать поле
+    resize: none;
+}

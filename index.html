@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap"
+        rel="stylesheet">
+    <!--Устанавливает размер страницы под окно клиента-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css\style.css">
+    <title>Portfolio</title>
+
+    <!--Подключаем библиотеки jquery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body>
+    <!--Шапка-->
+    <header class="header">
+        <div class="container">
+            <div class="header__inner">
+                <!--Навбар слева-->
+                <div class="user">
+                    <!--Картинка аватар-->
+                    <div class="user__avatar">
+                        <img src="https://icons.iconarchive.com/icons/blackvariant/button-ui-app-pack-one/48/Lite-Icon-icon.png"
+                            alt="">
+                    </div>
+                    <div class="user__content">
+                        <!--Описание чуть правее. br для переноса строки-->
+                        <div class="user__name">Дмитрий<br>Васютин</div>
+                        <!--amp для игнорирования знака перед-->
+                        <div class="user__prof">Junior frontend-разработчик</div>
+                    </div>
+                </div>
+                <!--Навигация не многоуровненвая, поэтому без списка-->
+                <nav class="nav" id="nav">
+                    <!--СКМ для выледения нескольких полей ввода-->
+                    <a class="nav__link" href="#my_works">Работы</a>
+                    <a class="nav__link" href="#about_me">Обо мне</a>
+                    <a class="nav__link" href="#education">Образование</a>
+                    <!--Установим модификатор для последнего нава. Будет как кнопка btn-->
+                    <a class="nav__link nav__link--btn" href="#" data-modal="#modal_hire_me">Написать мне</a>
+                </nav>
+
+                <!--Делаем меню навигации для адаптации под маленький экран БУРГЕР-->
+                <button class="burger" type="button" id="navToggle">
+                    <img class="burger__icon" src="images\burger.svg" alt="Меню">
+                </button>
+
+            </div>
+        </div>
+
+    </header>
+
+    <!--Главная страница. При использовании section заголовок должен быть в ней!-->
+    <section class="intro">
+        <div class="container">
+            <!--Разделим блок на две части. Сначала левую-->
+            <div class="intro__inner">
+                <!--Для заголовка и кнопочек-->
+                <div class="intro__content">
+                    <h2 class="intro__subtitle">Привет<br>Меня зовут</h2>
+                    <h1 class="intro__title">Дмитрий Васютин</h1>
+                    <!--Создадим новый div для стиля. Не забываем про &amp-->
+                    <div class="intro__text">Junior frontend-разработчик</div>
+
+                    <!--Создаем блок с месседжарами (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                    <div class="social">
+                        <a class="social__link" href="https://t.me/DmitryVasyutin">
+                            <img src="images\telegram.svg" width="60px" alt="Ссылка на телеграмм">
+                        </a>
+                        <a class="social__link" href="https://wa.me/79616568977">
+                            <img src="images\whatsapp.svg" width="60px" alt="Ссылка на вотсап">
+                        </a>
+                        <a class="social__link" href="https://viber.click/79616568977">
+                            <img src="images\viber.svg" width="60px" alt="Ссылка на вайбер">
+                        </a>
+                    </div>
+
+                    <!--Одна кнопка будет ссылкой, а вторая кнопкой (Есть отличие в стилизации)-->
+                    <!--Указываем id вызываемого окна-->
+                    <a href="#" class="btn" data-modal="#modal_hire_me">Написать мне</a>
+                    <!--Указываем id вызываемого окна-->
+                    <button class="btn" type="button" data-modal="#modal_resume">Резюме</button>
+
+                </div>
+                <!--Вот тут вставляем картинку-->
+                <img class="intro__photo" src="images\photo.png" alt="Мое фото">
+            </div>
+            <!--Тут закрывается .intro__inner-->
+        </div>
+        <!--Тут закрывается .container-->
+    </section>
+
+
+    <!--Блок с работами -->
+    <div class="works" id="my_works">
+        <!--Ставим нашу сетку-->
+        <div class="container">
+
+            <!--Блок навигации по нашм работам. Так же привяжем атрибут для js чтобы фильтровать.-->
+            <div class="works__nav">
+                <!--Пропишем события по атрибуту data-filter-->
+                <a href="#" class="works__nav-link" data-filter="all">Все</a>
+                <a href="#" class="works__nav-link" data-filter="app">Загруженные</a>
+                <a href="#" class="works__nav-link" data-filter="website">Наработки</a>
+                <a href="#" class="works__nav-link" data-filter="interection">Эскизы</a>
+            </div>
+
+            <!--Создалим блок с работами / портфолио. приравняем так же идендификатор -->
+            <div class="portfolio" id="portfolio">
+                <!--Сделаем структкрный блок. Зададим атрибуд для подвязки к js-->
+                <div class="portfolio__col" data-cat="app">
+
+                    <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_project_1">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images\061137854.jpg" width="370" height="300" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">app</div>
+                            <div class="work__title">
+                                Описание продукта
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Структкрный блок 2-->
+                <div class="portfolio__col" data-cat="website">
+
+                    <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_project_2">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images\061137854.jpg" width="370" height="300" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">website</div>
+                            <div class="work__title">
+                                Описание продукта
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!--Структкрный блок 3-->
+                <div class="portfolio__col" data-cat="interection">
+
+                    <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_project_3">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images\061137854.jpg" width="370" height="300" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">interection</div>
+                            <div class="work__title">
+                                Описание продукта
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--Закрывает portfolio-->
+
+            <!--Сделаем класс-помошник, который выровняе ее по центру и обрнем им кнопку-->
+            <!--<div class="text-center">-->
+            <!--Сделаем кнопку с модификатором, потому что она поменьше-->
+            <!--<a class="btn  btn--sm" href="#">Load more work</a>-->
+            <!--</div>-->
+
+        </div>
+        <!--Закрывает container-->
+    </div>
+    <!--Закрывает works-->
+
+    <!--Следущая часть с описанием обо мне. Используем section, так как в прошлом уже задали заголовки-->
+    <section class="about">
+        <div class="container">
+            <!--Делаем блок разделяемый на две части-->
+            <div class="about__inner" id="about_me">
+                <!--Левая часть, та что с фото-->
+                <div class="about__photo">
+                    <img class="img" src="images\intro__background.png" alt="Моя фотография">
+                </div>
+                <!--Правая часть, та что с описанием-->
+                <div class="about__content">
+                    <!--Делаем заголовок-->
+                    <h3 class="about__title">Обо мне</h3>
+                    <!--Под заголовок-->
+                    <h2 class="about__bigtitle">Кто я?</h2>
+                    <!--Блок текста-->
+                    <div class="about__text">
+                        <p>Долгое время я рабо</p>
+                    </div>
+                    <!--Используем созданные ранее кнопки-->
+                    <a href="#" class="btn" data-modal="#modal_hire_me">HIRE ME</a>
+                    <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
+                </div>
+                <!--Закрывает content-->
+            </div>
+            <!--Закрывает inner-->
+        </div>
+        <!--Закрывает conteiner-->
+    </section>
+
+    <!--Делаем блок с отзывами-->
+    <div class="reviews">
+        <!--Добавляем нашу сетку-->
+        <div class="container">
+
+            <div class="reviews__item">
+                <div class="reviews__text">
+                    <p>Не делай того, что осуждает твоя совесть, и не говори того, что не согласно
+                        с правдой. Соблюдай это самое важное, и ты выполнишь всю задачу своей жизни.</p>
+                </div>
+                <div class="reviews__author">
+                    <!--Тут находится аватарка автора (Поставим временную) и пропишем стили -->
+                    <img class="reviews__photo" src="https://place-hold.it/103x103" alt="Аватарка автора">
+                    <div class="reviews__name">Марк Аврелий</div>
+                    <div class="reviews__company">Римский император</div>
+                    <div class="reviews__rating"></div>
+                </div>
+            </div>
+
+        </div>
+        <!--Закрыватеся container-->
+    </div>
+    <!--Закрывается reviews-->
+
+    <!--Блок news-->
+    <section class="news" id="education">
+        <div class="container">
+
+            <div class="news__header">
+                <h3 class="news__title">Образование</h3>
+                <div class="news__text">Сертификаты о прохождении обучения</div>
+            </div>
+
+            <!--Сертификат JS-->
+            <div class="articles">
+
+                <div class="articles__col">
+                    <!--Блок верх-->
+                    <div class="articles__item">
+                        <div class="articles__header">
+                            <time class="articles__date">27<br>июля</time>
+                            <!--Обернем картинку в сыллку-->
+                            <a href="#" data-modal="#certificate_java">
+                                <!--Сертификат-->
+                                <img class="articles__photo" src="images\certificate java_page-0001.jpg"
+                                    alt="Сертификат">
+                            </a>
+                        </div>
+                        <div class="articles__content">
+                            <!--Заголовок тоже обернем в ссылку-->
+
+                            <h4 class="atticles__title">
+                                <a href="#" data-modal="#certificate_java">Основы разработки на Java
+                                </a>
+                            </h4>
+
+                            <div class="articles__cat">Java</div>
+                            <div class="articles__text">
+                                <p>Изучение основ языка программирования Java, технологии JIT–компиляции,
+                                    исполняющей виртуальной машины JVM. Создание приложения "Pomodoro" в редакторе
+                                    IntelliJ IDEA, билдинг с помощью Gradle, подключение репозитория GitHub для
+                                    версионирования кода, интеграция приложения в телеграм-бота. Развертывание
+                                    приложения
+                                    на Yandex Cloud для автономности.</p>
+                            </div>
+                        </div>
+                        <!--Кнопка. Может и ненужна будет-->
+                        <a href="#" class="btn  btn--sm" data-modal="#certificate_java">Развернуть</a>
+                    </div>
+                </div>
+
+
+                <div class="articles__col">
+                    <!--Блок верх-->
+                    <div class="articles__item">
+                        <div class="articles__header">
+                            <time class="articles__date">1<br>февраля</time>
+                            <!--Обернем картинку в сыллку-->
+                            <a href="#" data-modal="#certificate_js">
+                                <!--Сертификат-->
+                                <img class="articles__photo" src="images\Сертификат JS 4-2-22_page-0001.jpg"
+                                    alt="Сертификат">
+                            </a>
+                        </div>
+                        <div class="articles__content">
+                            <!--Заголовок тоже обернем в ссылку-->
+
+                            <h4 class="atticles__title">
+                                <a href="#" data-modal="#certificate_js">Первые шаги в JavaScript: создаём сайт и
+                                    приложение
+                                </a>
+                            </h4>
+
+                            <div class="articles__cat">JavaScript</div>
+                            <div class="articles__text">
+                                <p>Курс–интенсив по созданию гайда персонажей "Marvel". Использование
+                                    фреймворка Bootstrap для стилизации, редактора VSCode
+                                    и среды Node.js, подключение Vue.js и Vue CLI. API с методами запросов
+                                    GET для подгрузки персонажей в каталог из объектов JSON.
+                                    Деплой "приложения" на хостинге Timeweb.</p>
+                            </div>
+                        </div>
+                        <!--Кнопка. Может и ненужна будет-->
+                        <a href="#" class="btn  btn--sm" data-modal="#certificate_js">Развернуть</a>
+                    </div>
+                </div>
+
+                <div class="articles__col">
+                    <!--Блок верх-->
+                    <div class="articles__item">
+                        <div class="articles__header">
+                            <time class="articles__date">29<br>марта</time>
+                            <!--Обернем картинку в сыллку-->
+                            <a href="#" data-modal="#certificate_python">
+                                <!--Сертификат-->
+                                <img class="articles__photo" src="images\Сертификат Python 14.04.22_page-0001.jpg"
+                                    alt="Сертификат">
+                            </a>
+                        </div>
+                        <div class="articles__content">
+                            <!--Заголовок тоже обернем в ссылку-->
+
+                            <h4 class="atticles__title">
+                                <a href="#" data-modal="#certificate_python">Основы программирования на Python
+                                </a>
+                            </h4>
+
+                            <div class="articles__cat">Python</div>
+                            <div class="articles__text">
+                                <p>Курс–интенсив по изучению основ языка Python, разработке приложения "ToDo" с
+                                    последующей
+                                    интеграции в телеграм-бота и его переносом на PythonAnywhere для автономности.</p>
+                            </div>
+                        </div>
+                        <!--Кнопка. Может и ненужна будет-->
+                        <a href="#" class="btn  btn--sm" data-modal="#certificate_python">Развернуть</a>
+                    </div>
+                </div>
+
+                <div class="articles__col">
+                    <!--Блок верх-->
+                    <div class="articles__item">
+                        <div class="articles__header">
+                            <time class="articles__date">25<br>января</time>
+                            <!--Обернем картинку в сыллку-->
+                            <a href="#" data-modal="#certificate_html_css">
+                                <!--Сертификат-->
+                                <img class="articles__photo" src="images\certificate_page-0001.jpg" alt="Сертификат">
+                            </a>
+                        </div>
+                        <div class="articles__content">
+                            <!--Заголовок тоже обернем в ссылку-->
+
+                            <h4 class="atticles__title">
+                                <a href="#" data-modal="#certificate_html_css">Вёрстка сайтов с HTML и CSS
+                                </a>
+                            </h4>
+
+                            <div class="articles__cat">HTML CSS</div>
+                            <div class="articles__text">
+                                <p>Изучение языка разметки HTML и таблиц стилей CSS: синематеки, структуры документа,
+                                    основных тег и атрибутов, селекторов и свойств. Верстка страницы сайта. </p>
+                            </div>
+                        </div>
+                        <!--Кнопка. Может и ненужна будет-->
+                        <a href="#" class="btn  btn--sm" data-modal="#certificate_html_css">Развернуть</a>
+                    </div>
+                </div>
+            </div>
+            <!--Закрывает articles-->
+
+
+        </div>
+        <!--Закрывает container-->
+    </section>
+
+    <!--Тут будет подвал-->
+    <footer class="footer">
+        <!--Делаем нашу сетку-->
+        <div class="container">
+            <!--Разбиваем блок на две части (Левая социал, правая бар)-->
+            <div class="footer__inner">
+                <!--Левая часть-->
+                <div class="footer__credits">
+                    <!--Левый текст-->
+                    <div class="footer__copyright">
+                        &copy; Д. С. Васютин, 2022
+                    </div>
+                    <!--Социальные кнопочки чуть правее-->
+                    <div class="footer__social">
+                        <!--target="_blank" - откроет ссылку в новом окне-->
+                        <a href="https://t.me/DmitryVasyutin" target="_blank">
+                            <img src="images\telegram_mono.svg" width="24" alt="Телеграмм">
+                        </a>
+                        <a href="https://wa.me/79616568977" target="_blank">
+                            <img src="images\whatsapp_mono.svg" width="24" alt="Вотсап">
+                        </a>
+                        <a href="https://viber.click/79616568977" target="_blank">
+                            <img src="images\viber_mono.svg" width="24" alt="Вайбер">
+                        </a>
+                    </div>
+                </div>
+                <!--Закрывается credits-->
+                <!--Правая часть-->
+                <div class="footer__nav">
+                    <!--Кнопки навигации, но меньше-->
+                    <a href="#my_works" class="footer__nav-link">Работы</a>
+                    <a href="#about_me" class="footer__nav-link">Обо мне</a>
+                    <a href="#education" class="footer__nav-link">Образование</a>
+                    <!--Последняя кнопка будет именно кнопкой. Добавлю модификатор-->
+                    <a href="#" class="footer__nav-link--btn" data-modal="#modal_hire_me">Написать мне</a>
+                </div>
+            </div>
+            <!--Закрывется credits-->
+        </div>
+    </footer>
+
+
+    <!--Модальные окна-->
+    <!--Первый блок с маской-->
+    <!--Пропишем id-->
+    <div class="modal" id="modal_project_1">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+            или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+
+            <!--Пропишем структуру для каждого блока отдельно-->
+            <div class="modal-work">
+                <!--Разобьем окно на две части-->
+                <!--Левая часть-->
+                <div class="modal-work__preview">
+                    <!--Новый атрибут для слайдера slick-->
+                    <div data-slider="slick">
+                        <!--1 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780" alt="">
+                        </div>
+                        <!--2 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">PROJECT TITLE</h3>
+                        <div class="modal-work__info">
+                            category | 2018
+                        </div>
+                    </div>
+
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-title">Client:</div>
+                        <div class="modal-work__client-company">Creative Agency</div>
+                    </div>
+
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptates inventore
+                            molestias accusantium blanditiis mollitia esse quaerat enim, laudantium omnis itaque veniam
+                            repellat aliquam porro nesciunt voluptatem nemo amet exercitationem.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, magnam! Rem illum similique
+                            ut repellat dignissimos quos veritatis, tempore, cumque non quo quis obcaecati at saepe
+                            facilis exercitationem laboriosam quaerat.</p>
+
+                    </div>
+
+                    <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
+                    <div class="modal-work__footer">
+                        <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
+                            <!--Тут вставляем картинку со стрелочкой-->
+                            <img class="modal-work__btn  modal-work__btn--arr" src="images\arrow-left-s-svgrepo-com.svg"
+                                alt="">
+                            Previeus
+                        </button>
+                        <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
+                            <!--И тут вставляем картинку со стрелочкой но уже после-->
+                            Next
+                            <img class="modal-work__btn  modal-work__btn--arr"
+                                src="images\arrow-right-s-svgrepo-com.svg" alt="">
+                        </button>
+                    </div>
+
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
+            <!--Закрывается modal-work-->
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <!--Модальое окно для второй работы-->
+    <!--Пропишем id-->
+    <div class="modal" id="modal_project_2">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+                или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+
+            <!--Пропишем структуру для каждого блока отдельно-->
+            <div class="modal-work">
+                <!--Разобьем окно на две части-->
+                <!--Левая часть-->
+                <div class="modal-work__preview">
+                    <!--Новый атрибут для слайдера slick-->
+                    <div data-slider="slick">
+                        <!--1 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780" alt="">
+                        </div>
+                        <!--2 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">PROJECT TITLE 2</h3>
+                        <div class="modal-work__info">
+                            category | 2018
+                        </div>
+                    </div>
+
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-title">Client:</div>
+                        <div class="modal-work__client-company">Creative Agency</div>
+                    </div>
+
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptates inventore
+                            molestias accusantium blanditiis mollitia esse quaerat enim, laudantium omnis itaque veniam
+                            repellat aliquam porro nesciunt voluptatem nemo amet exercitationem.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, magnam! Rem illum similique
+                            ut repellat dignissimos quos veritatis, tempore, cumque non quo quis obcaecati at saepe
+                            facilis exercitationem laboriosam quaerat.</p>
+
+                    </div>
+
+                    <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
+                    <div class="modal-work__footer">
+                        <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
+                            <!--Тут вставляем картинку со стрелочкой-->
+                            <img class="modal-work__btn  modal-work__btn--arr" src="images\arrow-left-s-svgrepo-com.svg"
+                                alt="">
+                            Previeus
+                        </button>
+                        <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
+                            <!--И тут вставляем картинку со стрелочкой но уже после-->
+                            Next
+                            <img class="modal-work__btn  modal-work__btn--arr"
+                                src="images\arrow-right-s-svgrepo-com.svg" alt="">
+                        </button>
+                    </div>
+
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
+            <!--Закрывается modal-work-->
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <!--Модальое окно для третей работы-->
+    <!--Пропишем id-->
+    <div class="modal" id="modal_project_3">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+                или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+
+            <!--Пропишем структуру для каждого блока отдельно-->
+            <div class="modal-work">
+                <!--Разобьем окно на две части-->
+                <!--Левая часть-->
+                <div class="modal-work__preview">
+                    <!--Новый атрибут для слайдера slick-->
+                    <div data-slider="slick">
+                        <!--1 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780" alt="">
+                        </div>
+                        <!--2 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">PROJECT TITLE 2</h3>
+                        <div class="modal-work__info">
+                            category | 2018
+                        </div>
+                    </div>
+
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-title">Client:</div>
+                        <div class="modal-work__client-company">Creative Agency</div>
+                    </div>
+
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptates inventore
+                            molestias accusantium blanditiis mollitia esse quaerat enim, laudantium omnis itaque veniam
+                            repellat aliquam porro nesciunt voluptatem nemo amet exercitationem.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, magnam! Rem illum similique
+                            ut repellat dignissimos quos veritatis, tempore, cumque non quo quis obcaecati at saepe
+                            facilis exercitationem laboriosam quaerat.</p>
+
+                    </div>
+
+                    <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
+                    <div class="modal-work__footer">
+                        <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
+                            <!--Тут вставляем картинку со стрелочкой-->
+                            <img class="modal-work__btn  modal-work__btn--arr" src="images\arrow-left-s-svgrepo-com.svg"
+                                alt="">
+                            Previeus
+                        </button>
+                        <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
+                            <!--И тут вставляем картинку со стрелочкой но уже после-->
+                            Next
+                            <img class="modal-work__btn  modal-work__btn--arr"
+                                src="images\arrow-right-s-svgrepo-com.svg" alt="">
+                        </button>
+                    </div>
+
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
+            <!--Закрывается modal-work-->
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+
+    <!--Делавем второе модальное окно. Тоже даем id-->
+    <div class="modal" id="modal_resume">
+        <!--Дальше уже само содержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+
+            <!--Делае отдельный блок для независимой стилизации-->
+            <div class="modal__content">
+                <h3 class="modal__title text-center">Резюме</h3>
+
+                <!--Делаем кнопочки (Может потом уберу) а так же обернем в класс-помошник-->
+                <div class="text-center">
+                    <a href="#" class="btn btn--thin">Скачать</a>
+                    <a href="#" class="btn btn--thin">Печать</a>
+                </div>
+
+                <!--Делаем блок time-line-->
+                <div class="timeline">
+                    <!--Используем отдельный, новый псевдокласс-->
+                    <div class="timeline__col timeline__col--left">
+                        <!--Заголовок для одной колонки-->
+                        <h4 class="timeline__title">Опыт работы</h4>
+
+                        <div class="timeline__item">
+                            <time class="timeline__date" datetime="25-8-2022">2018 - <b>Настоящее время</b></time>
+                            <h5 class="timeline__subtitle">АвтоЛебанон</h5>
+                            <div class="timeline__position">Менеджер</div>
+                            <div class="timeline__text">
+                                <p>Реализация продаж в 1C (версии 8.3), так же на торговых площадках (Zzap, Euroauto).
+                                    Создание, редактирование заказов.
+                                    Ведение номенклатуры товара. Работа с CRM (Bitrix24, amoCRM).<br>
+
+                                    Устройство легковых ТС: европейских, азиатских и американских производителей.
+                                    Знание рынка автозапчастей, смазочных материалов, аксессуаров и автомобильной химии.
+                                    Знание ассортимента большинства российских поставщиков, интернет-магазинов
+                                    (Авто-Евро, Армтек, АВТОРУСЬ, Favorit (ЮРАЛ), ROSSKO, М Партс, AD Москворечье,
+                                    Микадо, Арконт, ПартКом) и работа с ними
+                                    (оформление заказов, возвратов, решение гарантийных вопросов). Работа с цифровыми
+                                    ресурсами, оригинальными каталогами производителей:<br>
+                                    VAG: ETKA |
+                                    BMW: ETK |
+                                    Mercedes: EPC, WIS/ASRA |
+                                    Porsche: PET2 |
+                                    Volvo: VIDA |
+                                    Hyundai и Kia: Snap-on EPC, Microcat Life |
+                                    Ford: Ecat, Snap-on EPC |
+                                    General Motors: GM EPC Global, GM UZ Online |
+                                    PSA: OnLine Service BOX |
+                                    Fiat и Alfa Romeo: E-PER (Mopar) |
+                                    Jaguar и Land Rover: Jaguar LandRover Online |
+                                    Mitsubishi: MMC ASA Euro, MMC FUSO |
+                                    Mazda: Mazda Euro Online |
+                                    Toyota и Lexus: Toyota EU Microcat.Market |
+                                    Renault: Dealer Connect, Parts Online |
+                                    Bentley: Bentley Online |
+                                    Acura и Honda: All regions Online eStore |
+                                    Suzuki: Suzuki Online |
+                                    <br>С неоригинальным:
+                                    TecDocAPI Online, TecDoc CD, TecDoc DVD
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="timeline__col timeline__col--right">
+                        <!--Заголовок для другой колонки-->
+                        <h4 class="timeline__title">Навыки</h4>
+
+                        <div class="timeline__item">
+                            <h5 class="timeline__subtitle">Профессиональные</h5>
+                            <!--<div class="timeline__position">LA University, USA</div>-->
+
+                            <div class="timeline__text">
+                                <p>Верстка и редактирование несложных страниц на HTML и CSS. Разработка простой логики
+                                    на языках: JavaScript, JAVA, Python, PHP.<br>
+                                    Подключение и использование сторонних библиотек: JQuery, TelegramApi для Python,
+                                    Bootstrap, GitHub, Gradle (только для сборки).<br>
+                                    Использование облачных технологий, хостингов, виртуальных машин для развёртывания
+                                    приложений: Timeweb, Yandex Cloud, PythonAnywhere.<br>
+                                    Знание интерфейсов и работа с редакторами: VSCode, IntelliJ
+                                    IDEA, Adobe XD.
+                                    Так же с рабочей средой: 1С:Предприятие и CRM Битрикс24.<br>
+
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <div class="timeline__item">
+                            <h5 class="timeline__subtitle">Личные</h5>
+                            <div class="timeline__text">
+                                <p>
+                                    Желание обучаться: заинтересованность в получении новых навыков, как и укрепление
+                                    знаний ранее изученных для текущей профессии.<br><br>
+                                    Грамотная речь: правильное построение диалога для понимания нужд клиента или
+                                    руководителя для выполнения задачи.<br><br>
+                                    Техническая грамотность: понимание принципа работы техники, что нас окружает. Будь
+                                    то компьютеры, гаджеты, автомобили и механизмы.
+                                    Почему гремит гром, откуда берется электричество в розетке, почему иллюминаторы
+                                    круглые, а не квадратные.
+                                </p>
+                            </div>
+
+                        </div>
+
+                        <!--Заголовок для скилов
+                        <h4 class="timeline__title">Умения</h4>
+
+                        <div class="timeline__text">
+                            <p>
+
+                            </p>
+                        </div>-->
+
+
+                        <h4 class="timeline__title">Образование</h4>
+
+                        <div class="timeline__item">
+                            <time class="timeline__date" datetime="25-8-2016">2016</time>
+                            <h5 class="timeline__subtitle">ИАиС | ВолгГАСУ</h5>
+                            <div class="timeline__position">Высшее неоконченное</div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <!--Закрывает timeline-->
+
+                <!--Добавляем кнопочку-->
+                <div class="text-center">
+                    <a href="#" class="btn" data-modal="#modal_hire_me">Написать мне</a>
+                </div>
+
+            </div>
+            <!--Закрывает content-->
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <!--Делавем третье модальное окно. Тоже даем id-->
+    <div class="modal" id="modal_hire_me">
+        <!--Делаем модификатор, потому что это окно поменьше размером-->
+        <div class="modal__dialog modal__dialog--sm">
+
+            <!--Кнопка закрыть-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+
+
+
+
+            <!--Делаем новый блок для контакта-->
+            <div class="contact">
+                <!--Разобьем на две части-->
+                <div class="contact__left">
+                    <!--Сбрасываем лишний margin с помошью помошника-->
+                    <h3 class="modal__title mb-0">Написать мне</h3>
+                    <h4 class="modal__subtitle"> ПОЗВОНИТЕ ИЛИ ОТПРАВЬТЕ ЗАЯВКУ</h4>
+
+                    <!--Используем список-->
+                    <ul class="contact__info">
+                        <li class="contact__info-item">
+                            <img class="contact__info-icon" src="images\phone.svg" width="18px" alt="Телефон">
+                            +7(961)6568977
+                        </li>
+                        <li class="contact__info-item">
+                            <img class="contact__info-icon" src="images\mail.svg" width="18px" alt="Письмо">
+                            D1mk0Leb@yandex.ru
+                        </li>
+                    </ul>
+
+                    <!--Делаем форму-->
+                    <form class="form" action="/" method="post" id="form">
+                        <div class="form__group">
+                            <label class="form__label"  for="name">Введите</label>
+                            <input class="form__input" name="name" type="text" placeholder="Телефон или почту">
+                        </div>
+
+                        <div class="form__group">
+                            <label class="form__label" for="text">Напишите</label>
+                            <textarea class="form__textarea" name="text"
+                                placeholder="Ваше сообщение..."></textarea>
+                        </div>
+
+                        <!--Вставим кнопку и обернем классом что бы была справа-->
+                        <div class="text-right">
+                            <button class="btn" type="submit">Отправить</button>
+                        </div>
+
+                    </form>
+
+                </div>
+                <!--Закрывает contact__left-->
+            </div>
+            <!--Закрывает contact-->
+
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <!--Модальное окно для развертки сертификата-->
+    <div class="modal" id="certificate_java">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+            или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="certificate">
+                <img src="images\certificate java_page-0001.jpg" alt="">
+            </div>
+
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <div class="modal" id="certificate_js">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+            или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="certificate">
+                <img src="images\Сертификат JS 4-2-22_page-0001.jpg" alt="">
+            </div>
+
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <div class="modal" id="certificate_python">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+            или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="certificate">
+                <img src="images\Сертификат Python 14.04.22_page-0001.jpg" alt="">
+            </div>
+
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+    <div class="modal" id="certificate_html_css">
+        <!--Дальше уже само модержимое окна-->
+        <div class="modal__dialog">
+
+            <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
+            или может не использовать класс окна, а закрывать окно в котором находится-->
+            <button class="modal__close" type="button" data-close>
+                <img src="images\close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="certificate">
+                <img src="images\certificate_page-0001.jpg" alt="">
+            </div>
+
+
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
+    <!--Закрывается modal-->
+
+
+    <!--Подключаем js-->
+    <script src="js\telegrambot.js"></script>
+    <script src="js\slick.min.js"></script>
+    <script src="js\app.js"></script>
+
+
+</body>
+
+</html>

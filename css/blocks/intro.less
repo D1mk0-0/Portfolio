@@ -1,0 +1,127 @@
+// main: ../style.less
+
+
+.intro {
+    @media @mobile {
+        margin-top: 70px;
+    }
+}
+
+//Пропишем общее отображение
+.intro__inner {
+    display: flex;
+    //Позицианируем блок
+    //Отсутп над 
+    padding-top: 6.6rem;
+    // Отступ под
+    padding-bottom: 8rem;
+
+    position: relative;
+
+    // Пропишем фоновое изображение 1 - ссылка 2 - сторона 3 - по низу 4 - без повторов
+    //background: url("../images/background01.png") right bottom no-repeat;
+
+    background: url("../images/background_main043.png") center bottom no-repeat;
+    //Пропишем границу (полоску) под всем общим блоком 1 - толшина 2 - сплошная 3 - цвет (Укажем в fade)
+    border-bottom: 1px solid fade(@gray, 30%);
+
+    //Медиа запрос для адаптации
+    @media @tablet {
+        //Отсутп над 
+        padding-top: 3rem;
+        // Отступ под
+        padding-bottom: 3rem;
+
+        //Размер фона на табледе. Нужно четко попадать
+        background-size: 820px auto;
+    }
+
+    @media @mobile {
+        background-size: 720px auto;
+    }
+}
+
+//И для каждой части отдельно (Левой)
+.intro__content {
+    width: 50%;
+    margin-left: 1rem;
+
+    @media @mobile {
+        text-align: center;
+        width: 60%;
+        z-index: 2;
+        margin-left: 0;
+    }
+
+    @media @mobile-sm {
+        width: 100%;
+    }
+}
+
+//Стилизуем заголовки
+.intro__subtitle {
+    margin-bottom: -5px;
+    //Размер шрифта 32px = 2.13rem
+    font-size: 2.13rem;
+    //Цвет (Он унаследован у тега body но можно потом поиграться с ним)
+    color: @black;
+    //Тип шрифта
+    font-weight: 200;
+
+    //Адаптивность заголовка 
+    @media @tablet {
+        font-size: 1.5rem;
+    }
+}
+
+.intro__title {
+    //Можно добавить небольшой отступ снизу 
+    margin-bottom: 3px;
+    //Размер шрифта 45px = 3rem
+    font-size: 3rem;
+    //Цвет
+    color: @black;
+    //Тип шрифта
+    font-weight: 700;
+
+    //Адаптивность заголовка 
+    @media @tablet {
+        font-size: 2rem;
+    }
+}
+
+.intro__text {
+    //Небольшой отступ снизу
+    margin-bottom: 25px;
+    //Размер шрифта 18px = 1.2rem
+    font-size: 1.2rem;
+    //Цвет. Сново в rgba но fade
+    color: fade(@black, 70%);
+    //Тип не буду указывать
+    //font-weight: 400;
+}
+
+//(Правой) Позицианируем фото
+.intro__photo {
+    //Позиция абсолют
+    position: absolute;
+    //Позиция от низа
+    bottom: -1px;
+    //Позиция от правого края
+    right: 0;
+    //Надо почитать что это такое
+    z-index: 1;
+
+    //Медиа запрос для адаптации
+    @media @tablet {
+        width: 350px;
+    }
+
+    @media @mobile {
+        width: 300px;
+    }
+
+    @media @mobile-sm {
+        display: none;
+    }
+}

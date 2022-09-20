@@ -1,0 +1,156 @@
+// main: ../style.less
+
+//Стилизуем окно со слайдами
+
+.modal-work {
+    display: flex;
+
+    @media @mobile {
+        flex-direction: column;
+    }
+}
+
+//Установим размер картинки в процентах для блока фото
+.modal-work__preview {
+    width: 65%;
+    //Релаем relative и относительно этого блока будем позицианировать фотографии
+    position: relative;
+    //Скрываем все что вылазиет за наш блок
+    overflow: hidden;
+
+    @media @mobile {
+        width: 100%;
+        height: 350px;
+    }
+}
+
+//Параметры для картинки
+.modal-work__photo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 1;
+
+    //Для идеального выравнивания по центру воспользуемся трансформацией (Надо почитать)
+    //1-по оси x 2-по оси y 
+    transform: translate3d(-50%, -50%, 0);
+
+    @media @mobile {
+        width: 350px;
+        height: 350px;
+    }
+}
+
+//Установим размер картинки в процентах для блока текста
+.modal-work__content {
+    width: 35%;
+    //Пропишем отступы для провай части 1-сверху 2-справа 3-снизу 4-слева
+    //Если без кнопки, то отступ снизу 11.3rem
+    padding: 3.4rem 6.6rem 1rem 1.73rem;
+    //Что бы раскидать кнопки по всей длине 
+    position: relative;
+
+    @media @mobile {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+        bottom: 0;
+        left: 0;
+        padding: 1rem;
+    }
+}
+
+.modal-work__header {
+    //Добавим отступ
+    margin-bottom: 2.2rem;
+}
+
+.modal-work__title {
+    //Небольшой отступ для заголовка
+    margin-bottom: .2rem;
+    font-size: 2.12rem;
+    color: @black;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    @media @mobile {
+        font-size: 1.8rem;
+    }
+}
+
+.modal-work__info {
+    font-size: 1.2rem;
+    color: @gray;
+    text-transform: uppercase;
+}
+
+.modal-work__client-title {
+    //Небольшой отступ
+    margin-bottom: .2rem;
+    font-size: 1.06rem;
+    color: @black;
+    font-weight: 700;
+}
+
+.modal-work__client-company {
+    //Отступ в 22px
+    margin-bottom: 2.2rem;
+    font-size: 0.94em;
+    font-style: italic;
+    color: @gray;
+}
+
+.modal-work__text {
+    //Установим отступ для кнопки (Возмажно потом уберем)
+    margin-bottom: 8.66rem;
+    font-size: .8rem;
+    font-weight: 300;
+    color: @gray;
+    //Межстрочный интервал
+    line-height: 1.6rem;
+
+    @media @mobile {
+        margin-bottom: 2rem;
+    }
+}
+
+//Пропишем стили для кнопок общие
+.modal-work__footer {
+    //Установим ширину
+    width: 100%;
+    //Чтобы раскидать кнопки на лево и право
+    display: flex;
+    justify-content: space-between;
+
+    //Установим отступы 1-сверху 2-слева/справа 3-снизу
+    padding: 0 1.8rem 1rem;
+
+    //Установим позицию
+    position: absolute;
+    //И помещаем кнопки вниз
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+}
+
+//Стили для кнопок что внизу (Потом их может уберу)
+.modal-work__btn {
+    padding: 0;
+
+    background: none;
+    border: 0;
+    cursor: pointer;
+
+    //Наследуем шрифт у родителя
+    font-family: inherit;
+    font-size: 0.94rem;
+    color: @black;
+    text-transform: uppercase;
+
+    &--arr {
+        //Чтобы стрелочки у кнопок были пониже
+        position: relative;
+        bottom: -7px;
+    }
+}

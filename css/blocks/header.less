@@ -1,0 +1,28 @@
+// main: ../style.less
+
+.header {
+    /*Укажем отступ сверху и слева-справа в ремах*/
+    padding: 1.2rem 0;
+    position: relative;
+
+    @media @mobile {
+        padding: 0.8rem 0;
+
+        background-color: @white;
+        box-shadow: 0 5px 10px fade(@black, 70%);
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+    }
+}
+
+.header__inner {
+    display: flex;
+    /*Распалагает навбар по левую и правую сторону*/
+    justify-content: space-between;
+    /*Выровняем элементы по центру паддинга*/
+    align-items: center;
+}

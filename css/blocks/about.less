@@ -1,0 +1,155 @@
+// main: ../style.less
+
+//Блок стилизации описания
+
+.about {
+    //Пропишем отступ 126px = 8.4
+    margin:  8.4rem 0;
+    justify-content: center;
+
+    @media @tablet {
+        margin: 4rem 0;
+    }
+}
+
+.about__inner {
+    //Все так же непонятно
+    display: flex;
+
+    //Чтобы колонки могли пересакивать на новую строку
+    flex-wrap: wrap;
+
+    //Установим максимальую ширину 
+    max-width: 1090px;
+}
+
+//Разобьем блок на две части по ширине
+.about__photo,
+.about__content {
+    width: 50%;
+
+    @media @tablet {
+        width: 100%;
+    }
+}
+
+.about__content {
+    padding-left: 3.2rem;
+    //Добавим отступ сверху
+    margin-top: 2rem;
+
+    @media @tablet {
+        order: 1;
+        margin-bottom: 2rem;
+        padding: 1rem;
+
+        text-align: center;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+//Установим нормальный фон 
+.about__photo {
+    position: relative;
+    //Приподнимем фото, что находится в этом блоке
+    img {
+        position: absolute;
+        bottom: 0;
+        z-index: 2;
+        width: 550px;
+    }
+    //background: url("../images/background01.png") center bottom no-repeat;
+
+
+    @media @tablet {
+        order: 2;
+        
+        img {
+            position: relative;
+            margin: 0 auto;
+            min-width: 40%;
+        }
+    }
+
+    @media @mobile {
+
+        img {
+            width: 350px;
+
+        }
+    }
+
+    @media @mobile-sm {
+        width: 350px;
+    }
+  }
+
+//Стилизуем заоловки 
+.about__title {
+    font-size: 3rem;
+    color: @black;
+    //Шрифт 
+    font-weight: 700;
+    //Все буквы большие
+    text-transform: uppercase;
+
+    //Адаптаця текста
+    @media @notebook {
+        font-size: 2.5rem;
+    }
+
+    @media @mobile {
+        font-size: 2rem;
+    }
+}
+
+
+.about__bigtitle {
+    //Отступ от заголовка 
+    margin-bottom: 1.4rem;
+    //Установим relastive
+    position: relative;
+    left: -10px;
+    //Размер 92px = 6.13rem
+    font-size: 6.13rem;
+    //Уменьшм межстрочный отступ
+    line-height: 1.1;
+    color: fade(@black, 15%);
+    //Шрифт
+    font-weight: 700;
+    //Сново все буквы большие
+    text-transform: uppercase;
+
+    //Адаптаця текста
+    @media @notebook {
+        font-size: 4rem;
+    }
+
+    @media @tablet {
+        position: static;
+    }
+
+    @media @mobile {
+        font-size: 3rem;
+    }
+}
+
+//Стилизуем текст
+.about__text {
+    //Установим отступ
+    //padding: 0 1rem;
+    max-width: 480px;
+    //Отступ снизу
+    margin-bottom: 2.8rem;
+    font-size: .8rem;
+    color: @gray;
+    //Межстрочный отступ
+    line-height: 2rem;
+    font-weight: 300;
+
+    @media @tablet {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,48 @@
+// main: ../style.less
+
+//Стили для колонки со шкалами умений (Возможно потом уберу)
+
+.progress-bar {
+    margin-bottom: 2.6rem;
+
+    @media @mobile {
+        display: none;
+    }
+}
+
+.progress-bar__item {
+    display: flex;
+    //Выравниваем по центру по вертикали 
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.progress-bar__title {
+    font-size: .94rem;
+    font-weight: 300;
+}
+
+.progress-bar__right {
+    //Немного отделим одну часть от другой
+    padding-left: 1.2rem;
+}
+
+.progress-bar__left {
+    flex-basis: 35%;
+  }
+
+.progress-bar__bar {
+    width: 139px;
+    height: 6px;
+
+    background-color: #EFEFEF;
+}
+
+.progress-bar__progress {
+    height: 100%;
+
+    background-color: @gray;
+
+    //Сделаем плавное увеличение
+    transition: width .2s linear;
+}
