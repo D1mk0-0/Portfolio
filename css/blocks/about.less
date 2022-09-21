@@ -4,7 +4,7 @@
 
 .about {
     //Пропишем отступ 126px = 8.4
-    margin:  8.4rem 0;
+    margin: 8.4rem 0;
     justify-content: center;
 
     @media @tablet {
@@ -52,20 +52,53 @@
 
 //Установим нормальный фон 
 .about__photo {
+    height: 53rem;
+    width: 36rem;
     position: relative;
+    overflow: hidden;
+
     //Приподнимем фото, что находится в этом блоке
     img {
-        position: absolute;
+
+        position: relative;
         bottom: 0;
+        left: 0;
         z-index: 2;
-        width: 550px;
+        margin: auto;
+        height: 100%;
+
+        animation: motion 20s ease-in-out infinite;
+    
+    .motion:hover {
+        animation: none;
     }
+     
+    @keyframes motion {
+        0%{
+            transform: translate3d(0, 0, 0);
+        }
+        50% {
+            transform: translate3d(-50%, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+        
+        
+    }
+
+    
+
+    }
+
+
     //background: url("../images/background01.png") center bottom no-repeat;
 
 
     @media @tablet {
         order: 2;
-        
+        width: 100%;
+
         img {
             position: relative;
             margin: 0 auto;
@@ -74,17 +107,23 @@
     }
 
     @media @mobile {
-
+        height: 100%;
+        width: 100%;
         img {
-            width: 350px;
+            width: 50rem;
 
         }
+        
     }
 
+        
+
     @media @mobile-sm {
-        width: 350px;
+        width: 50rem;
     }
-  }
+
+    
+}
 
 //Стилизуем заоловки 
 .about__title {

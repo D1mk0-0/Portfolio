@@ -103,10 +103,13 @@
 
 //(Правой) Позицианируем фото
 .intro__photo {
+    width: 400px;
+    height: auto;
+    margin-right: 5rem;
     //Позиция абсолют
     position: absolute;
     //Позиция от низа
-    bottom: -1px;
+    bottom: 0;
     //Позиция от правого края
     right: 0;
     //Надо почитать что это такое
@@ -114,11 +117,13 @@
 
     //Медиа запрос для адаптации
     @media @tablet {
-        width: 350px;
+        width: 300px
     }
 
     @media @mobile {
-        width: 300px;
+        width: 250px;
+        margin-right: 0;
+        bottom: 0px;
     }
 
     @media @mobile-sm {

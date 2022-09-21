@@ -17,7 +17,6 @@
 
     <!--Подключаем библиотеки jquery-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -28,9 +27,11 @@
                 <!--Навбар слева-->
                 <div class="user">
                     <!--Картинка аватар-->
+                    <a href="#">
                     <div class="user__avatar">
-                        <img src="https://icons.iconarchive.com/icons/blackvariant/button-ui-app-pack-one/48/Lite-Icon-icon.png"
-                            alt="">
+                        <img src="images/html-1.svg" alt="" class="html">
+                        <img src="images/css-3.svg" alt="" class="css">
+                    </a>
                     </div>
                     <div class="user__content">
                         <!--Описание чуть правее. br для переноса строки-->
@@ -92,7 +93,7 @@
 
                 </div>
                 <!--Вот тут вставляем картинку-->
-                <img class="intro__photo" src="images\photo.png" alt="Мое фото">
+                <img class="intro__photo" src="images\photo0105.png" alt="Мое фото">
             </div>
             <!--Тут закрывается .intro__inner-->
         </div>
@@ -188,7 +189,7 @@
             <div class="about__inner" id="about_me">
                 <!--Левая часть, та что с фото-->
                 <div class="about__photo">
-                    <img class="img" src="images\intro__background.png" alt="Моя фотография">
+                    <img class="img" src="images/about_photo.jpg" alt="Моя фотография">
                 </div>
                 <!--Правая часть, та что с описанием-->
                 <div class="about__content">
@@ -198,11 +199,27 @@
                     <h2 class="about__bigtitle">Кто я?</h2>
                     <!--Блок текста-->
                     <div class="about__text">
-                        <p>Долгое время я рабо</p>
+                        <p>Долгое время я работал с электронными каталогами разных автопроизводителей, сделал не одну
+                            сотню заказов с всевозможных
+                            интернет-магазинов дистрибьюторов, связывался с клиентами, организовывал доставку их товара
+                            по всей России.
+                            С каждым переходом на сайт, поиском нужной позиции в каталоге, добавлением товара в корзину
+                            — мне становилось все интереснее и интереснее:
+                            Что происходит после нажатия «Отправить»? Как браузер понимает, где ему открыть элемент на
+                            странице? Что такое сервер и клиент и как они связаны?</p>
+
+                            <p>Ответы на свои вопросы я искал в таких источниках как Codecademy, Нетология, HTML Academy.
+                            Изучал проекты и решения разных разработчиков на GitHub.
+                            Ровняясь и внимая аудиторов академии я начал верстать страницы, оживлять их, придавать
+                            динамику. Разрабатывал легкие приложения "ToDo" и "Pomodoro",
+                            "Волшебный шар" что отвечает на вопросы, и многое другое. Теперь я считаю этот опыт одним из
+                            самых интересных и ищу команду, которая поможет мне раскрыть
+                            этот потенциал, преобразовать мои умения в пользу для командного проекта и достижения общей цели.
+                        </p>
                     </div>
                     <!--Используем созданные ранее кнопки-->
-                    <a href="#" class="btn" data-modal="#modal_hire_me">HIRE ME</a>
-                    <button class="btn" type="button" data-modal="#modal_resume">SEE MY RESUME</button>
+                    <a href="#" class="btn" data-modal="#modal_hire_me">Написать мне</a>
+                    <button class="btn" type="button" data-modal="#modal_resume">Резюме</button>
                 </div>
                 <!--Закрывает content-->
             </div>
@@ -223,7 +240,7 @@
                 </div>
                 <div class="reviews__author">
                     <!--Тут находится аватарка автора (Поставим временную) и пропишем стили -->
-                    <img class="reviews__photo" src="https://place-hold.it/103x103" alt="Аватарка автора">
+                    <img class="reviews__photo" src="../images/avatar_Mark01.png" alt="Аватарка автора">
                     <div class="reviews__name">Марк Аврелий</div>
                     <div class="reviews__company">Римский император</div>
                     <div class="reviews__rating"></div>
@@ -748,8 +765,9 @@
                             <!--<div class="timeline__position">LA University, USA</div>-->
 
                             <div class="timeline__text">
-                                <p>Верстка и редактирование несложных страниц на HTML и CSS. Разработка простой логики
-                                    на языках: JavaScript, JAVA, Python, PHP.<br>
+                                <p>Верстка и редактирование несложных страниц на HTML и CSS с использованием препроцессора LESS. 
+                                    Разработка простой логики
+                                    на языках: JavaScript, JAVA, Python. Знание основ PHP.<br>
                                     Подключение и использование сторонних библиотек: JQuery, TelegramApi для Python,
                                     Bootstrap, GitHub, Gradle (только для сборки).<br>
                                     Использование облачных технологий, хостингов, виртуальных машин для развёртывания
@@ -773,31 +791,11 @@
                                     руководителя для выполнения задачи.<br><br>
                                     Техническая грамотность: понимание принципа работы техники, что нас окружает. Будь
                                     то компьютеры, гаджеты, автомобили и механизмы.
-                                    Почему гремит гром, откуда берется электричество в розетке, почему иллюминаторы
-                                    круглые, а не квадратные.
-                                </p>
                             </div>
 
                         </div>
 
-                        <!--Заголовок для скилов
-                        <h4 class="timeline__title">Умения</h4>
 
-                        <div class="timeline__text">
-                            <p>
-
-                            </p>
-                        </div>-->
-
-
-                        <h4 class="timeline__title">Образование</h4>
-
-                        <div class="timeline__item">
-                            <time class="timeline__date" datetime="25-8-2016">2016</time>
-                            <h5 class="timeline__subtitle">ИАиС | ВолгГАСУ</h5>
-                            <div class="timeline__position">Высшее неоконченное</div>
-
-                        </div>
 
                     </div>
                 </div>
@@ -851,14 +849,13 @@
                     <!--Делаем форму-->
                     <form class="form" action="/" method="post" id="form">
                         <div class="form__group">
-                            <label class="form__label"  for="name">Введите</label>
+                            <label class="form__label" for="name">Введите</label>
                             <input class="form__input" name="name" type="text" placeholder="Телефон или почту">
                         </div>
 
                         <div class="form__group">
                             <label class="form__label" for="text">Напишите</label>
-                            <textarea class="form__textarea" name="text"
-                                placeholder="Ваше сообщение..."></textarea>
+                            <textarea class="form__textarea" name="text" placeholder="Ваше сообщение..."></textarea>
                         </div>
 
                         <!--Вставим кнопку и обернем классом что бы была справа-->
@@ -958,7 +955,7 @@
 
 
     <!--Подключаем js-->
-    <script src="js\telegrambot.js"></script>
+    <script src="js\main.js"></script>
     <script src="js\slick.min.js"></script>
     <script src="js\app.js"></script>
 

@@ -12,8 +12,53 @@
 
     /*Укажем округление углов для картинки в этом блоке*/
     img {
-        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        position: relative;
     }
+
+    .css {
+        transform: rotateY(180deg);
+    }
+
+    .html,
+    .css {
+        backface-visibility: hidden;
+        display: block;
+        position: absolute;
+    }
+
+    .html {
+        animation: one-rotation 5s infinite;
+    }
+
+    .css {
+        animation: two-rotation 5s infinite;
+    }
+
+
+    @keyframes one-rotation {
+        from {
+            transform: rotateY(0deg);
+        }
+
+        to {
+            transform: rotateY(360deg);
+        }
+
+    }
+
+    @keyframes two-rotation {
+        from {
+            transform: rotateY(180deg);
+        }
+
+        to {
+            transform: rotateY(540deg);
+        }
+
+    }
+
 }
 
 .user__content {
