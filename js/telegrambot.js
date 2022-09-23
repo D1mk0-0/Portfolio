@@ -30,6 +30,7 @@ document.getElementById('form').addEventListener('submit', function(event) {
        
        .finally(() => {
            console.log('Конец');
+            form.reset(); 
        })
 
 })

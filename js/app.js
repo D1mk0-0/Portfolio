@@ -172,4 +172,15 @@ $(function () {
         nav.toggleClass("show");
     });
 
+    //js для прододжения простомтра ===========================================================================
+     
+    const document = $('[data-show="showBottom"]');
+    
+    $(document).on("click", function(event) { 
+        event.preventDefault();
+        
+        $(".showCertificate").toggleClass("show");
+        $(".showBottom").toggleClass("show");
+
+      });
 });

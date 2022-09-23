@@ -40,6 +40,10 @@
     margin-left: 2rem;
     position: relative;
 
+    @media @tablet {
+        margin-left: 1rem;
+    }
+
     /*Установим размер шрифта 14 / 15 = 0.93 */
     font-size: 0.93rem;
     color: @black;
@@ -100,6 +104,10 @@
             background-color: @black;
             //Установим цвет текста
             color: @white;
+        }
+
+        @media @tablet {
+            padding: 0.66rem 1rem;
         }
 
         @media @mobile {
