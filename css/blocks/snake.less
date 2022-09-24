@@ -49,6 +49,12 @@ align-items: center;
   }
   canvas {
     background-color: @black;
+
+    @media @mobile {
+      display: flex;
+      width: 60%;
+      margin: 0 auto;
+    }
   }
   .container {
     display: flex;

@@ -124,10 +124,10 @@
                     <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#snake">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
-                        <img class="work__image" src="images/snake_img.JPG" alt="">
+                        <img class="work__image" src="images/snakeImg.jpg" alt="">
                         <!--Дальше описане что ниже-->
                         <div class="work__content">
-                            <div class="work__cat">html css JavaScript</div>
+                            <div class="work__cat">JavaScript</div>
                             <div class="work__title">
                                 Игра змейка
                             </div>
@@ -141,12 +141,12 @@
                     <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#modal_project_2">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
-                        <img class="work__image" src="images/061137854.jpg" alt="">
+                        <img class="work__image" src="images/lebanonImg.jpg" alt="">
                         <!--Дальше описане что ниже-->
                         <div class="work__content">
-                            <div class="work__cat">website</div>
+                            <div class="work__cat">Adobe XD</div>
                             <div class="work__title">
-                                Описание продукта
+                                Проект сайта магазина
                             </div>
                         </div>
                     </div>
@@ -504,14 +504,13 @@
                         </div>
                     </div>
 
-                    <div class="modal-work__client">
-                        <div class="modal-work__client-title">Client:</div>
-                        <div class="modal-work__client-company">Creative Agency</div>
-                    </div>
-
+                  
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
-                        <p>Маленькая игра змейка написаная на JavaScript с помощью видеоуроков</p>
+                        <p>Маленькая игра змейка написанная на JavaScript с помощью несчетного количества видеоуроков.
+                            Малая часть кода нагло украдена с CodePen, но все работает. Разве что элементы управления
+                            при медиа-запросе на маленьких устройствах отсутствуют. Но все в планах...
+                        </p>
 
                     </div>
 
@@ -547,36 +546,40 @@
                     <div data-slider="slick">
                         <!--1 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="https://place-hold.it/790x780" alt="">
+                            <img class="modal-work__photo" src="images/Web_1920–1.jpg" alt="">
                         </div>
                         <!--2 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                            <img class="modal-work__photo" src="images/Web_1920–2.jpg" alt="">
                         </div>
                     </div>
                 </div>
                 <!--Правая часть-->
                 <div class="modal-work__content">
                     <div class="modal-work__header">
-                        <h3 class="modal-work__title">PROJECT TITLE 2</h3>
+                        <h3 class="modal-work__title">Проект сайта АвтоЛебанон</h3>
                         <div class="modal-work__info">
-                            category | 2018
+                            Adobe XD
                         </div>
                     </div>
 
-                    <div class="modal-work__client">
-                        <div class="modal-work__client-title">Client:</div>
-                        <div class="modal-work__client-company">Creative Agency</div>
-                    </div>
+                    <a href="#" download="download/Lebanon.xd">
+
+                        <div class="modal-work__client">
+                            <div class="modal-work__client-title">Скачать XD </div>
+                        </div>
+                    </a>
+
 
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptates inventore
-                            molestias accusantium blanditiis mollitia esse quaerat enim, laudantium omnis itaque veniam
-                            repellat aliquam porro nesciunt voluptatem nemo amet exercitationem.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, magnam! Rem illum similique
-                            ut repellat dignissimos quos veritatis, tempore, cumque non quo quis obcaecati at saepe
-                            facilis exercitationem laboriosam quaerat.</p>
+                        <p>Набросок из двух страниц своего видения сайта магазина АвтоЛебанон.
+                            Выполнен в редакторе Adobe XD и доступен для скачивания по ссылке выше.
+                        </p>
+                        <p>На первом слайде страница пользователя с рекомендациями и последними действиями.
+                            С помощью дашборда слева (по задумке) можно листать разделы сайта как в приложении.
+                            На втором слайде открыта страница каталога для добавления позиции в заказ.
+                        </p>
 
                     </div>
 
@@ -586,11 +589,11 @@
                             <!--Тут вставляем картинку со стрелочкой-->
                             <img class="modal-work__btn  modal-work__btn--arr" src="images/arrow-left-s-svgrepo-com.svg"
                                 alt="">
-                            Previeus
+                            Назад
                         </button>
                         <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
                             <!--И тут вставляем картинку со стрелочкой но уже после-->
-                            Next
+                            Вперед
                             <img class="modal-work__btn  modal-work__btn--arr"
                                 src="images/arrow-right-s-svgrepo-com.svg" alt="">
                         </button>
@@ -703,8 +706,7 @@
 
                 <!--Делаем кнопочки (Может потом уберу) а так же обернем в класс-помошник-->
                 <div class="text-center">
-                    <a href="#" class="btn btn--thin">Скачать</a>
-                    <a href="#" class="btn btn--thin">Печать</a>
+                    <a href="download/Резюме.pdf" target="_blank" class="btn btn--thin">Открыть в PDF</a>
                 </div>
 
                 <!--Делаем блок time-line-->
@@ -773,7 +775,7 @@
                                     Использование облачных технологий, хостингов, виртуальных машин для развёртывания
                                     приложений: Timeweb, Yandex Cloud, PythonAnywhere.<br>
                                     Знание интерфейсов и работа с редакторами: VSCode, IntelliJ
-                                    IDEA, Adobe XD.
+                                    IDEA, Adobe XD и Photoshop.
                                     Так же с рабочей средой: 1С:Предприятие и CRM Битрикс24.<br>
 
                                 </p>
