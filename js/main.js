@@ -26,7 +26,7 @@ $('.form').on('submit', function (event) {
     });
     
     $.ajax({
-        url: 'ajax.php',
+        url: 'backend/ajax.php',
         type: 'POST',
         data: data,
         cache: false,
