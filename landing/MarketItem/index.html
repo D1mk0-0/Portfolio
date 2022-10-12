@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Ёлки</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+</head>
+
+<body>
+    <!--Блок 1-->
+    <div class="intro">
+        <div class="video">
+            <video class="video__media" src="img/4K_3.mp4" autoplay muted="muted" loop></video>
+        </div>
+        <div class="intro__content">
+            <div class="header__inner">
+                <div class="header__image">
+                    <img src="img/new_year_header.png" alt="">
+                </div>
+                <div class="header__product">
+                    <a href="#">Ёлки</a>
+                    <a href="#">Сосны</a>
+                    <a href="#">Украшения</a>
+                    <a href="#">Гирлянды</a>
+                </div>
+            </div>
+            <div class="intro__product">
+                <div class="intro__photo">
+                    <div class="photo__fir">
+                        <a href="#">
+                            <img src="img/fir_gray_white.png" alt="">
+                        </a>
+                    </div>
+                    <div class="photo__fir">
+                        <a href="#">
+                            <img src="img/fir_green.png" alt="">
+                        </a>
+                    </div>
+                    <div class="photo__fir">
+                        <a href="#">
+                            <img src="img/fir_white.png" alt="">
+                        </a>
+                    </div>
+                    <div class="photo__fir">
+                        <a href="#">
+                            <img src="img/fir_red.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="intro__desc">
+                    <h1>Выбери свою красавицу</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Блок 2-->
+    <div class="structure">
+        <div class="structure__block">
+            <div class="structure__photo">
+                <div class="single-item">
+                    <div class="structure__image">
+                        <img class="active" src="img/fir_red.png" alt="">
+                        <img src="img/fir_green.png" alt="">
+                        <img src="img/fir_white.png" alt="">
+                    </div>
+                </div>
+                <div class="structure__footer">
+                    <button class="structure__btn slickPrev" type="button">
+                        <img class="structure__arr left" src="img/right-arrow-svgrepo-com.svg" alt="">
+                    </button>
+                    <button class="structure__btn slickNext" type="button">
+                        <img class="structure__arr" src="img/right-arrow-svgrepo-com.svg" alt="">
+                    </button>
+                </div>
+            </div>
+            <div class="structure__desc">
+                <div class="structure__label">
+                    <h2>Ёлка Датская</h2>
+                </div>
+                <div class="structure__item">
+                    <p>Елки из Дании имеют пушистую крону, но пораниться об иголки невозможно, потому что они мягкие.
+                        Длина
+                        елочной иголки доходит до 3 сантиметров, при этом они плоские и широкие, без острого угла.
+                        Хвойные
+                        деревья из Дании стоят в 2-3 раза дольше российских елок. Это тоже заслуга специалистов, их
+                        выращивающих.
+                    </p>
+                </div>
+                <div class="structure__btn">
+                    <a href="#">
+                        Купить
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Блок 3-->
+    <div class="order__form" id="order">
+        <div class="order__header">
+            <div class="order__name">
+                <h4>Елка Датская</h4>
+            </div>
+            <div class="order__timer">
+                <div id="timer"></div>
+            </div>
+        </div>
+        <div class="order__price">
+            <div class="price__old">1990₽</div>
+            <div class="price__new">1590₽</div>
+        </div>
+
+        <div class="order__photo">
+            <img src="img/fir_red.png" alt="">
+        </div>
+        <form class="form" action="/" method="post" id="form">
+            <div class="form__group">
+                <label class="form__label" for="name">Введите телефон</label>
+                <input class="form__input" pattern="8[0-9]{10}" name="name" type="text" placeholder="88005553535">
+            </div>
+            <div class="form__group">
+                <label class="form__label" for="text">Напишите сообщение</label>
+                <input class="form__text" name="text" placeholder="Василий">
+            </div>
+            <div class="form-right">
+                <button class="btn" type="submit">Отправить</button>
+            </div>
+
+
+        </form>
+
+    </div>
+
+    
+    <script src="js/main.js"></script>
+</body>
+
+</html>

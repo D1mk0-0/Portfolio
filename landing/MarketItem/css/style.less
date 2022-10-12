@@ -1,0 +1,43 @@
+//compress: true 
+
+html {
+    font-size: 15px;
+}
+
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    color: @black;
+    background: url("../img/backgroung_ny.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+p {
+    margin: 0 0 1rem;
+}
+
+@mobile-sm: ~ "(max-width: 565px)";
+@mobile: ~ "(max-width: 767px)";
+@tablet: ~ "(max-width: 1100px)";
+@notebook: ~ "(max-width: 1300px)";
+
+@black: #2B2A2C;
+@gray: #6A696B;
+@white: #FFFFFF;
+@gray-light: #e2decd;
+
+@import "blocks\block1.less";
+@import "blocks\block2.less";
+@import "blocks\block3.less";
+
+
+
+
+
