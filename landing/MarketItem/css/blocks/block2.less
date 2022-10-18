@@ -22,6 +22,10 @@
     background-color: fade(@gray-light, 80%);
     box-shadow: .5rem .5rem .5rem fade(#000, 50%);
     border-radius: .5rem;
+
+    @media @mobile {
+        flex-wrap: wrap;
+    }
 }
 
 .single-item {

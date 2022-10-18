@@ -1,0 +1,46 @@
+// main: ../style.less
+
+.catalog__conteiner {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 3rem auto;
+    max-width: 70rem;
+    justify-content: center;
+    @media @mobile {
+        max-width: 30rem;
+        display: inline;
+    }
+}
+
+.catalog__card {
+    position: relative;
+    display: inline-block;
+    flex-direction: column;
+    align-items: center;
+    width: 18rem;
+    margin: .8rem;
+    text-align: center;
+    background-color: fade(@gray-light, 80%);
+    box-shadow: .5rem .5rem .5rem fade(#000, 50%);
+    border-radius: .5rem;
+    .card__img {
+        margin: .5rem;
+        img {
+            max-width: 8rem;
+            height: auto;
+        }
+    }
+    .card__item {
+        margin-top: .5rem;
+        font-size: 1rem;
+        font-weight: 700;
+        color: @black;
+    }
+
+    .card__desc {
+        margin: .5rem;
+        font-size: .8rem;
+        font-weight: 400;
+        color: @black;
+    }
+}

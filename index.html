@@ -11,7 +11,7 @@
         href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,300;0,400;0,700;1,300&display=swap"
         rel="stylesheet">
     <!--Устанавливает размер страницы под окно клиента-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/style.css">
     <title>Портфолио</title>
 
@@ -112,12 +112,31 @@
                 <!--Пропишем события по атрибуту data-filter-->
                 <a href="#" class="works__nav-link" data-filter="all">Все</a>
                 <a href="#" class="works__nav-link" data-filter="app">Загруженные</a>
-                <a href="#" class="works__nav-link" data-filter="website">Наработки</a>
-                <a href="#" class="works__nav-link" data-filter="interection">Эскизы</a>
+                <a href="#" class="works__nav-link" data-filter="website">Верстка</a>
+                <a href="#" class="works__nav-link" data-filter="interection">Наброски</a>
             </div>
 
             <!--Создалим блок с работами / портфолио. приравняем так же идендификатор -->
             <div class="portfolio" id="portfolio">
+
+                <!--Структкрный блок-->
+                <div class="portfolio__col" data-cat="website">
+
+                    <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_project_4">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images/img_glassmorphism.jpg" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">HTML CSS</div>
+                            <div class="work__title">
+                                эффект гласморфизм
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
                 <!--Сделаем структкрный блок. Зададим атрибуд для подвязки к js-->
                 <div class="portfolio__col" data-cat="app">
 
@@ -153,25 +172,25 @@
 
                 </div>
                 <!--Структкрный блок 3-->
-                
-                <div class="portfolio__col" data-cat="interection">
-                    <a href="landing/MarketItem/index.html" class="notHref">
-                    <!--Будем стилизовать сами работы по отдельности-->
 
-                    <div class="work">
-                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
-                        <img class="work__image" src="images/ny_leding.jpg" alt="">
-                        <!--Дальше описане что ниже-->
-                        <div class="work__content">
-                            <div class="work__cat">landing</div>
-                            <div class="work__title">
-                                Новогодний сайт-визитка
+                <div class="portfolio__col" data-cat="website">
+                    <a href="landing/MarketItem/index.html" class="notHref">
+                        <!--Будем стилизовать сами работы по отдельности-->
+
+                        <div class="work">
+                            <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                            <img class="work__image" src="images/ny_leding.jpg" alt="">
+                            <!--Дальше описане что ниже-->
+                            <div class="work__content">
+                                <div class="work__cat">landing</div>
+                                <div class="work__title">
+                                    Новогодний сайт-визитка
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 </div>
-                
+
 
             </div>
             <!--Закрывает portfolio-->
@@ -607,7 +626,7 @@
                         </div>
                     </div>
 
-                    <a href="#" download="download/Lebanon.xd">
+                    <a href="#" download="download/Lebanon.xd" class="easyHref">
 
                         <div class="modal-work__client">
                             <div class="modal-work__client-title">Скачать XD </div>
@@ -655,7 +674,7 @@
 
     <!--Модальое окно для третей работы-->
     <!--Пропишем id-->
-    <div class="modal" id="modal_project_3">
+    <div class="modal" id="modal_project_4">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
 
@@ -674,36 +693,85 @@
                     <div data-slider="slick">
                         <!--1 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="https://place-hold.it/790x780" alt="">
+                            <div class="card__body">
+                                <div class="card">
+                                    <div class="image__card">
+                                        <img src="images/img_morph/reinera.png" alt="Рейнира">
+                                    </div>
+                                    <div class="desc__card">
+                                        <div class="detail__card">
+                                            <h2>Рейенира Таргариен<br><span>Королева Вестероса</span></h2>
+                                            <div class="social__card">
+                                                <i class="fa fa-behance" alt="behance" title="behance">
+                                                    <img src="images/img_morph/behance-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-telegram" alt="telegram" title="telegram">
+                                                    <img src="images/img_morph/telegram-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-twitter" alt="twitter" title="twitter">
+                                                    <img src="images/img_morph/twitter-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-whatsapp" alt="whatsapp" title="whatsapp">
+                                                    <img src="images/img_morph/whatsapp-white.svg" alt="">
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!--2 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="https://place-hold.it/790x780/333" alt="">
+                            <div class="card__body_2">
+                                <div class="card">
+                                    <div class="image__card">
+                                        <img src="images/img_morph/deimon.jpg" alt="Рейнира">
+                                    </div>
+                                    <div class="desc__card">
+                                        <div class="detail__card">
+                                            <h2>Дейемон Таргариен<br><span>Принц Вестероса</span></h2>
+                                            <div class="social__card">
+                                                <i class="fa fa-behance" alt="behance" title="behance">
+                                                    <img src="images/img_morph/behance-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-telegram" alt="telegram" title="telegram">
+                                                    <img src="images/img_morph/telegram-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-twitter" alt="twitter" title="twitter">
+                                                    <img src="images/img_morph/twitter-white.svg" alt="">
+                                                </i>
+                                                <i class="fa fa-whatsapp" alt="whatsapp" title="whatsapp">
+                                                    <img src="images/img_morph/whatsapp-white.svg" alt="">
+                                                </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <!--Правая часть-->
                 <div class="modal-work__content">
                     <div class="modal-work__header">
-                        <h3 class="modal-work__title">PROJECT TITLE 2</h3>
+                        <h3 class="modal-work__title">эффект гласморфизм</h3>
                         <div class="modal-work__info">
-                            category | 2018
+                            html css
                         </div>
                     </div>
 
                     <div class="modal-work__client">
-                        <div class="modal-work__client-title">Client:</div>
-                        <div class="modal-work__client-company">Creative Agency</div>
+                        <a href="https://github.com/D1mk0-0/glassmorhpism" class="easyHref">
+                            <div class="modal-work__client-title">GitHub</div>
+                        </a>
                     </div>
 
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
-                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Atque voluptates inventore
-                            molestias accusantium blanditiis mollitia esse quaerat enim, laudantium omnis itaque veniam
-                            repellat aliquam porro nesciunt voluptatem nemo amet exercitationem.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe, magnam! Rem illum similique
-                            ut repellat dignissimos quos veritatis, tempore, cumque non quo quis obcaecati at saepe
-                            facilis exercitationem laboriosam quaerat.</p>
+                        <p>Эффект «матового стекла», который создаётся благодаря яркой подложке и стилизации области.
+                            Размытие фона делает его не таким заметным, поэтому сильного смещения фокуса в сторону
+                            бэкграунда нет. Внимание пользователей формируется на центральной области. В основе
+                            глассморизфма лежит объёмность. Объекты выглядят большими и значимыми.</p>
 
                     </div>
 
@@ -713,11 +781,11 @@
                             <!--Тут вставляем картинку со стрелочкой-->
                             <img class="modal-work__btn  modal-work__btn--arr" src="images/arrow-left-s-svgrepo-com.svg"
                                 alt="">
-                            Previeus
+                            Назад
                         </button>
                         <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
                             <!--И тут вставляем картинку со стрелочкой но уже после-->
-                            Next
+                            Вперед
                             <img class="modal-work__btn  modal-work__btn--arr"
                                 src="images/arrow-right-s-svgrepo-com.svg" alt="">
                         </button>

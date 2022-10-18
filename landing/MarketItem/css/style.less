@@ -2,6 +2,7 @@
 
 html {
     font-size: 15px;
+    width: 100%;
 }
 
 body {
@@ -23,8 +24,7 @@ p {
     margin: 0 0 1rem;
 }
 
-@mobile-sm: ~ "(max-width: 565px)";
-@mobile: ~ "(max-width: 767px)";
+@mobile: ~ "(max-width: 460px)";
 @tablet: ~ "(max-width: 1100px)";
 @notebook: ~ "(max-width: 1300px)";
 
@@ -35,7 +35,9 @@ p {
 
 @import "blocks\block1.less";
 @import "blocks\block2.less";
-@import "blocks\block3.less";
+@import "blocks\catalog.less";
+@import "blocks\order.less";
+
 
 
 
