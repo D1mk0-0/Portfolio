@@ -10,7 +10,9 @@
     //Пропищем отрицательный отступ для этих ячеек, что бы было вровень с полоской
     margin: 0 -1rem 2.8rem;
 
-    justify-content: space-evenly;
+    @media @notebook {
+        justify-content: center;
+    }
 }
 
 //Установим параметры для всех наших ячеек

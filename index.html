@@ -191,6 +191,17 @@
                     </a>
                 </div>
 
+                <div class="portfolio__col" data-cat="website">
+                    <div class="work" data-modal="#zoo__live__search">
+                        <img class="work__image" src="images/search__zoo.jpg" alt="">
+                        <div class="work__content">
+                            <div class="work__cat">JavaScript</div>
+                            <div class="work__title">
+                                Фильтр — поиск
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
             </div>
             <!--Закрывает portfolio-->
@@ -800,6 +811,71 @@
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
+
+    <div class="modal" id="zoo__live__search">
+        <div class="modal__dialog">
+            <button class="modal__close" type="button" data-close>
+                <img src="images/close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="modal-work">
+                <div class="modal-work__preview">
+                    <div class="search__bcg">
+                        <div class="search__area">
+                            <div class="search__content">
+                                <div class="search__name">
+                                    <h3>Живой поиск</h3>
+                                </div>
+                                <div>
+                                    <input class="search__form" type="text" id="live_search">
+                                </div>
+                                <div class="search__list">
+                                    <ul class="live_search">
+                                        <li>Кот</li>
+                                        <li>Пес</li>
+                                        <li>Слон</li>
+                                        <li>Жираф</li>
+                                        <li>Ленивец</li>
+                                        <li>Аист</li>
+                                        <li>Волк</li>
+                                        <li>Лошадь</li>
+                                        <li>Опоссум</li>
+                                        <li>Гиппопотам</li>
+                                        <li>Верблюд</li>
+                                        <li>Бегемот</li>
+                                        <li>Баран</li>
+                                        <li>Медведь</li>
+                                        <li>Крот</li>
+                                        <li>Кролик</li>
+                                        <li>Выдра</li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <script src="js/search.js"></script>
+                </div>
+
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">Поиск</h3>
+                        <div class="modal-work__info">
+                            JavaScript
+                        </div>
+                    </div>
+                    <div class="modal-work__text">
+                        <p>Поиск по части строки фильтрующий элементы списка. Практическое применение возможно в
+                            каталоге
+                            интернет-магазина,
+                            выбор города при регистрации и многое другое.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
 
 
     <!--Делавем второе модальное окно. Тоже даем id-->
