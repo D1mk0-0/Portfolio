@@ -14,8 +14,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/style.css">
     <title>Портфолио</title>
-
+    <link rel="shortcut icon" href="images/portfolio-logo.svg" type="image/x-icon">
     <!--Подключаем библиотеки jquery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
@@ -50,17 +51,13 @@
                     <!--Установим модификатор для последнего нава. Будет как кнопка btn-->
                     <a class="nav__link nav__link--btn" href="#" data-modal="#modal_hire_me">Написать мне</a>
                 </nav>
-
                 <!--Делаем меню навигации для адаптации под маленький экран БУРГЕР-->
                 <button class="burger" type="button" id="navToggle">
                     <img class="burger__icon" src="images/burger.svg" alt="Меню">
                 </button>
-
             </div>
         </div>
-
     </header>
-
     <!--Главная страница. При использовании section заголовок должен быть в ней!-->
     <section class="intro">
         <div class="container">
@@ -72,7 +69,6 @@
                     <h1 class="intro__title">Дмитрий Васютин</h1>
                     <!--Создадим новый div для стиля. Не забываем про &amp-->
                     <div class="intro__text">Junior frontend-разработчик</div>
-
                     <!--Создаем блок с месседжарами (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
                     <div class="social">
                         <a class="social__link" href="https://t.me/DmitryVasyutin">
@@ -85,13 +81,11 @@
                             <img src="images/viber.svg" alt="Ссылка на вайбер">
                         </a>
                     </div>
-
                     <!--Одна кнопка будет ссылкой, а вторая кнопкой (Есть отличие в стилизации)-->
                     <!--Указываем id вызываемого окна-->
                     <a href="#" class="btn" data-modal="#modal_hire_me">Написать мне</a>
                     <!--Указываем id вызываемого окна-->
                     <button class="btn" type="button" data-modal="#modal_resume">Резюме</button>
-
                 </div>
                 <!--Вот тут вставляем картинку-->
                 <img class="intro__photo" src="images/photo0105.png" alt="Мое фото">
@@ -100,28 +94,22 @@
         </div>
         <!--Тут закрывается .container-->
     </section>
-
-
     <!--Блок с работами -->
     <div class="works" id="my_works">
         <!--Ставим нашу сетку-->
         <div class="container">
-
             <!--Блок навигации по нашм работам. Так же привяжем атрибут для js чтобы фильтровать.-->
             <div class="works__nav">
                 <!--Пропишем события по атрибуту data-filter-->
                 <a href="#" class="works__nav-link" data-filter="all">Все</a>
-                <a href="#" class="works__nav-link" data-filter="app">Загруженные</a>
-                <a href="#" class="works__nav-link" data-filter="website">Верстка</a>
+                <a href="#" class="works__nav-link" data-filter="design">Дизайн</a>
+                <a href="#" class="works__nav-link" data-filter="layout">Верстка</a>
                 <a href="#" class="works__nav-link" data-filter="interection">Наброски</a>
             </div>
-
             <!--Создалим блок с работами / портфолио. приравняем так же идендификатор -->
             <div class="portfolio" id="portfolio">
-
                 <!--Структкрный блок-->
-                <div class="portfolio__col" data-cat="website">
-
+                <div class="portfolio__col" data-cat="design">
                     <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#modal_project_4">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
@@ -134,12 +122,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
-
                 <!--Сделаем структкрный блок. Зададим атрибуд для подвязки к js-->
                 <div class="portfolio__col" data-cat="app">
-
                     <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#snake">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
@@ -152,11 +137,9 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!--Структкрный блок 2-->
-                <div class="portfolio__col" data-cat="website">
-
+                <div class="portfolio__col" data-cat="design">
                     <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#modal_project_2">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
@@ -169,14 +152,11 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
                 <!--Структкрный блок 3-->
-
-                <div class="portfolio__col" data-cat="website">
+                <div class="portfolio__col" data-cat="layout">
                     <a href="landing/MarketItem/index.html" class="notHref">
                         <!--Будем стилизовать сами работы по отдельности-->
-
                         <div class="work">
                             <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
                             <img class="work__image" src="images/ny_leding.jpg" alt="">
@@ -190,8 +170,7 @@
                         </div>
                     </a>
                 </div>
-
-                <div class="portfolio__col" data-cat="website">
+                <div class="portfolio__col" data-cat="layout">
                     <div class="work" data-modal="#zoo__live__search">
                         <img class="work__image" src="images/search__zoo.jpg" alt="">
                         <div class="work__content">
@@ -202,15 +181,12 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!--Закрывает portfolio-->
-
         </div>
         <!--Закрывает container-->
     </div>
     <!--Закрывает works-->
-
     <!--Следущая часть с описанием обо мне. Используем section, так как в прошлом уже задали заголовки-->
     <section class="about">
         <div class="container">
@@ -257,12 +233,10 @@
         </div>
         <!--Закрывает conteiner-->
     </section>
-
     <!--Делаем блок с отзывами-->
     <div class="reviews">
         <!--Добавляем нашу сетку-->
         <div class="container">
-
             <div class="reviews__item">
                 <div class="reviews__text">
                     <p>Не делай того, что осуждает твоя совесть, и не говори того, что не согласно
@@ -276,24 +250,19 @@
                     <div class="reviews__rating"></div>
                 </div>
             </div>
-
         </div>
         <!--Закрыватеся container-->
     </div>
     <!--Закрывается reviews-->
-
     <!--Блок news-->
     <section class="news" id="education">
         <div class="container">
-
             <div class="news__header">
                 <h3 class="news__title">Образование</h3>
                 <div class="news__text">Сертификаты о прохождении обучения</div>
             </div>
-
             <!--Сертификат JS-->
             <div class="articles">
-
                 <div class="articles__col">
                     <!--Блок верх-->
                     <div class="articles__item">
@@ -308,12 +277,10 @@
                         </div>
                         <div class="articles__content">
                             <!--Заголовок тоже обернем в ссылку-->
-
                             <h4 class="atticles__title">
                                 <a href="#" data-modal="#certificate_google">Интернет-маркетинг
                                 </a>
                             </h4>
-
                             <div class="articles__cat">Google Навыки</div>
                             <div class="articles__text">
                                 <p>Курс из 100500 повествовательных видео и не меньшего
@@ -327,7 +294,6 @@
                         <a href="#" class="btn  btn--sm" data-modal="#certificate_google">Развернуть</a>
                     </div>
                 </div>
-
                 <div class="articles__col">
                     <!--Блок верх-->
                     <div class="articles__item">
@@ -342,12 +308,10 @@
                         </div>
                         <div class="articles__content">
                             <!--Заголовок тоже обернем в ссылку-->
-
                             <h4 class="atticles__title">
                                 <a href="#" data-modal="#certificate_java">Основы разработки на Java
                                 </a>
                             </h4>
-
                             <div class="articles__cat">Java</div>
                             <div class="articles__text">
                                 <p>Изучение основ языка программирования Java, технологии JIT–компиляции,
@@ -362,8 +326,6 @@
                         <a href="#" class="btn  btn--sm" data-modal="#certificate_java">Развернуть</a>
                     </div>
                 </div>
-
-
                 <div class="articles__col">
                     <!--Блок верх-->
                     <div class="articles__item">
@@ -378,13 +340,11 @@
                         </div>
                         <div class="articles__content">
                             <!--Заголовок тоже обернем в ссылку-->
-
                             <h4 class="atticles__title">
                                 <a href="#" data-modal="#certificate_js">Первые шаги в JavaScript: создаём сайт и
                                     приложение
                                 </a>
                             </h4>
-
                             <div class="articles__cat">JavaScript</div>
                             <div class="articles__text">
                                 <p>Курс–интенсив по созданию гайда персонажей "Marvel". Использование
@@ -398,7 +358,6 @@
                         <a href="#" class="btn  btn--sm" data-modal="#certificate_js">Развернуть</a>
                     </div>
                 </div>
-
                 <div class="showCertificate" id="showCertificate">
                     <div class="articles">
                         <div class="articles__col">
@@ -415,12 +374,10 @@
                                 </div>
                                 <div class="articles__content">
                                     <!--Заголовок тоже обернем в ссылку-->
-
                                     <h4 class="atticles__title">
                                         <a href="#" data-modal="#certificate_python">Основы программирования на Python
                                         </a>
                                     </h4>
-
                                     <div class="articles__cat">Python</div>
                                     <div class="articles__text">
                                         <p>Курс–интенсив по изучению основ языка Python, разработке приложения "ToDo" с
@@ -434,8 +391,6 @@
                                 <a href="#" class="btn  btn--sm" data-modal="#certificate_python">Развернуть</a>
                             </div>
                         </div>
-
-
                         <div class="articles__col">
                             <!--Блок верх-->
                             <div class="articles__item">
@@ -450,12 +405,10 @@
                                 </div>
                                 <div class="articles__content">
                                     <!--Заголовок тоже обернем в ссылку-->
-
                                     <h4 class="atticles__title">
                                         <a href="#" data-modal="#certificate_html_css">Вёрстка сайтов с HTML и CSS
                                         </a>
                                     </h4>
-
                                     <div class="articles__cat">HTML CSS</div>
                                     <div class="articles__text">
                                         <p>Изучение языка разметки HTML и таблиц стилей CSS: синематеки, структуры
@@ -469,21 +422,16 @@
                         </div>
                     </div>
                 </div>
-
             </div>
             <!--Закрывает articles-->
-
             <!--Сделаем класс-помошник, который выровняе ее по центру и обрнем им кнопку-->
             <div class="text-center showBottom" data-show="showBottom">
                 <!--Сделаем кнопку с модификатором, потому что она поменьше-->
                 <a class="btn  btn--sm" href="#">Показать еще</a>
             </div>
-
-
         </div>
         <!--Закрывает container-->
     </section>
-
     <!--Тут будет подвал-->
     <footer class="footer">
         <!--Делаем нашу сетку-->
@@ -524,28 +472,23 @@
             <!--Закрывется credits-->
         </div>
     </footer>
-
-
     <!--Модальные окна-->
     <!--Первый блок с маской-->
     <!--Пропишем id-->
     <div class="modal" id="snake">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
                 <img src="images/close_mono.svg" alt="Закрыть">
             </button>
-
             <!--Пропишем структуру для каждого блока отдельно-->
             <div class="modal-work">
                 <!--Разобьем окно на две части-->
                 <!--Левая часть-->
                 <div class="modal-snake">
                     <!--Новый атрибут для слайдера slick-->
-
                     <div class="snake">
                         <div class="container noselect">
                             <div class="wrapper">
@@ -554,7 +497,6 @@
                                     Новая игра
                                 </button>
                                 <div id="canvas">
-
                                 </div>
                                 <div id="ui">
                                     <h2>Счет
@@ -577,40 +519,31 @@
                             JavaScript
                         </div>
                     </div>
-
-
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
                         <p>Маленькая игра змейка написанная на JavaScript с помощью несчетного количества видеоуроков.
                             Малая часть кода нагло украдена с CodePen, но все работает. Разве что элементы управления
                             при медиа-запросе на маленьких устройствах отсутствуют. Но все в планах...
                         </p>
-
                     </div>
-
-
                 </div>
                 <!--Закрывается modal-work__content-->
             </div>
             <!--Закрывается modal-work-->
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <!--Модальое окно для второй работы-->
     <!--Пропишем id-->
     <div class="modal" id="modal_project_2">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
                 или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
                 <img src="images/close_mono.svg" alt="Закрыть">
             </button>
-
             <!--Пропишем структуру для каждого блока отдельно-->
             <div class="modal-work">
                 <!--Разобьем окно на две части-->
@@ -636,15 +569,11 @@
                             Adobe XD
                         </div>
                     </div>
-
                     <a href="#" download="download/Lebanon.xd" class="easyHref">
-
                         <div class="modal-work__client">
                             <div class="modal-work__client-title">Скачать XD </div>
                         </div>
                     </a>
-
-
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
                         <p>Набросок из двух страниц своего видения сайта магазина АвтоЛебанон.
@@ -654,9 +583,7 @@
                             С помощью дашборда слева (по задумке) можно листать разделы сайта как в приложении.
                             На втором слайде открыта страница каталога для добавления позиции в заказ.
                         </p>
-
                     </div>
-
                     <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
                     <div class="modal-work__footer">
                         <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
@@ -672,29 +599,24 @@
                                 src="images/arrow-right-s-svgrepo-com.svg" alt="">
                         </button>
                     </div>
-
                 </div>
                 <!--Закрывается modal-work__content-->
             </div>
             <!--Закрывается modal-work-->
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <!--Модальое окно для третей работы-->
     <!--Пропишем id-->
     <div class="modal" id="modal_project_4">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
                 или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
                 <img src="images/close_mono.svg" alt="Закрыть">
             </button>
-
             <!--Пропишем структуру для каждого блока отдельно-->
             <div class="modal-work">
                 <!--Разобьем окно на две части-->
@@ -770,22 +692,19 @@
                             html css
                         </div>
                     </div>
-
                     <div class="modal-work__client">
-                        <a href="https://github.com/D1mk0-0/glassmorhpism" class="easyHref">
-                            <div class="modal-work__client-title">GitHub</div>
-                        </a>
+                            <a href="https://github.com/D1mk0-0/glassmorhpism" class="easyHref disFlex">
+                                <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                                <div class="modal-work__client-title">GitHub</div>
+                            </a>
                     </div>
-
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
                         <p>Эффект «матового стекла», который создаётся благодаря яркой подложке и стилизации области.
                             Размытие фона делает его не таким заметным, поэтому сильного смещения фокуса в сторону
                             бэкграунда нет. Внимание пользователей формируется на центральной области. В основе
                             глассморизфма лежит объёмность. Объекты выглядят большими и значимыми.</p>
-
                     </div>
-
                     <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
                     <div class="modal-work__footer">
                         <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
@@ -801,17 +720,14 @@
                                 src="images/arrow-right-s-svgrepo-com.svg" alt="">
                         </button>
                     </div>
-
                 </div>
                 <!--Закрывается modal-work__content-->
             </div>
             <!--Закрывается modal-work-->
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <div class="modal" id="zoo__live__search">
         <div class="modal__dialog">
             <button class="modal__close" type="button" data-close>
@@ -847,7 +763,6 @@
                                         <li>Крот</li>
                                         <li>Кролик</li>
                                         <li>Выдра</li>
-
                                     </ul>
                                 </div>
                             </div>
@@ -855,7 +770,6 @@
                     </div>
                     <script src="js/search.js"></script>
                 </div>
-
                 <div class="modal-work__content">
                     <div class="modal-work__header">
                         <h3 class="modal-work__title">Поиск</h3>
@@ -873,37 +787,28 @@
                 </div>
             </div>
         </div>
-
     </div>
-
-
-
     <!--Делавем второе модальное окно. Тоже даем id-->
     <div class="modal" id="modal_resume">
         <!--Дальше уже само содержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть-->
             <button class="modal__close" type="button" data-close>
                 <img src="images/close_mono.svg" alt="Закрыть">
             </button>
-
             <!--Делае отдельный блок для независимой стилизации-->
             <div class="modal__content">
                 <h3 class="modal__title text-center">Резюме</h3>
-
                 <!--Делаем кнопочки (Может потом уберу) а так же обернем в класс-помошник-->
                 <div class="text-center">
                     <a href="download/Резюме.pdf" target="_blank" class="btn btn--thin">Открыть в PDF</a>
                 </div>
-
                 <!--Делаем блок time-line-->
                 <div class="timeline">
                     <!--Используем отдельный, новый псевдокласс-->
                     <div class="timeline__col timeline__col--left">
                         <!--Заголовок для одной колонки-->
                         <h4 class="timeline__title">Опыт работы</h4>
-
                         <div class="timeline__item">
                             <time class="timeline__date" datetime="2018-09">2018 - <b>Настоящее время</b></time>
                             <h5 class="timeline__subtitle">АвтоЛебанон</h5>
@@ -943,16 +848,13 @@
                                 </p>
                             </div>
                         </div>
-
                     </div>
                     <div class="timeline__col timeline__col--right">
                         <!--Заголовок для другой колонки-->
                         <h4 class="timeline__title">Навыки</h4>
-
                         <div class="timeline__item">
                             <h5 class="timeline__subtitle">Профессиональные</h5>
                             <!--<div class="timeline__position">LA University, USA</div>-->
-
                             <div class="timeline__text">
                                 <p>Верстка и редактирование несложных страниц на HTML и CSS с использованием
                                     препроцессора LESS.
@@ -965,12 +867,9 @@
                                     Знание интерфейсов и работа с редакторами: VSCode, IntelliJ
                                     IDEA, Adobe XD и Photoshop.
                                     Так же с рабочей средой: 1С:Предприятие и CRM Битрикс24.<br>
-
                                 </p>
                             </div>
-
                         </div>
-
                         <div class="timeline__item">
                             <h5 class="timeline__subtitle">Личные</h5>
                             <div class="timeline__text">
@@ -982,40 +881,28 @@
                                     Техническая грамотность: понимание принципа работы техники, что нас окружает. Будь
                                     то компьютеры, гаджеты, автомобили и механизмы.
                             </div>
-
                         </div>
-
-
-
                     </div>
                 </div>
                 <!--Закрывает timeline-->
-
                 <!--Добавляем кнопочку-->
                 <div class="text-center">
                     <a href="#" class="btn" data-modal="#modal_hire_me">Написать мне</a>
                 </div>
-
             </div>
             <!--Закрывает content-->
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <!--Делавем третье модальное окно. Тоже даем id-->
     <div class="modal" id="modal_hire_me">
         <!--Делаем модификатор, потому что это окно поменьше размером-->
         <div class="modal__dialog modal__dialog--sm">
-
             <!--Кнопка закрыть-->
             <button class="modal__close" type="button" data-close>
                 <img src="images/close_mono.svg" alt="Закрыть">
             </button>
-
-
-
-
             <!--Делаем новый блок для контакта-->
             <div class="contact">
                 <!--Разобьем на две части-->
@@ -1023,7 +910,6 @@
                     <!--Сбрасываем лишний margin с помошью помошника-->
                     <h3 class="modal__title mb-0">Написать мне</h3>
                     <h4 class="modal__subtitle"> ПОЗВОНИТЕ ИЛИ ОТПРАВЬТЕ ЗАЯВКУ</h4>
-
                     <!--Используем список-->
                     <ul class="contact__info">
                         <li class="contact__info-item">
@@ -1035,42 +921,33 @@
                             D1mk0Leb@yandex.ru
                         </li>
                     </ul>
-
                     <!--Делаем форму-->
-                    <form class="form" action="/" method="post" id="form">
+                    <form class="form" action="/backend/axaj.php" method="post" id="form">
                         <div class="form__group">
                             <label class="form__label" for="name">Введите</label>
                             <input class="form__input" name="name" type="text" placeholder="Телефон или почту">
                         </div>
-
                         <div class="form__group">
                             <label class="form__label" for="text">Напишите</label>
                             <textarea class="form__textarea" name="text" placeholder="Ваше сообщение..."></textarea>
                         </div>
-
                         <!--Вставим кнопку и обернем классом что бы была справа-->
                         <div class="text-right">
                             <button class="btn" type="submit">Отправить</button>
                         </div>
-
                     </form>
-
                 </div>
                 <!--Закрывает contact__left-->
             </div>
             <!--Закрывает contact-->
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <!--Модальное окно для развертки сертификата-->
     <div class="modal" id="certificate_java">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
@@ -1079,17 +956,13 @@
             <div class="certificate">
                 <img src="images/certificate_java_page-0001.jpg" alt="">
             </div>
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <div class="modal" id="certificate_js">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
@@ -1098,17 +971,13 @@
             <div class="certificate">
                 <img src="images/Сертификат_JS_4-2-22_page-0001.jpg" alt="">
             </div>
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <div class="modal" id="certificate_python">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
@@ -1117,17 +986,13 @@
             <div class="certificate">
                 <img src="images/Сертификат_Python_14.04.22_page-0001.jpg" alt="">
             </div>
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <div class="modal" id="certificate_html_css">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
@@ -1136,17 +1001,13 @@
             <div class="certificate">
                 <img src="images/certificate_page-0001.jpg" alt="">
             </div>
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
     <div class="modal" id="certificate_google">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
-
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
             или может не использовать класс окна, а закрывать окно в котором находится-->
             <button class="modal__close" type="button" data-close>
@@ -1155,20 +1016,14 @@
             <div class="certificate">
                 <img src="images/Google_Сертификат_page-0001.png" alt="">
             </div>
-
-
         </div>
         <!--Закрывается modal__dialog-->
     </div>
     <!--Закрывается modal-->
-
-
     <!--Подключаем js-->
     <script src="js/main.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/app.js"></script>
-
-
 </body>
 
 </html>
