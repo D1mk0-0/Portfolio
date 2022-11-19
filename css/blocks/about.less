@@ -68,27 +68,25 @@
         height: 100%;
 
         animation: motion 20s ease-in-out infinite;
-    
-    .motion:hover {
-        animation: none;
-    }
-     
-    @keyframes motion {
-        0%{
-            transform: translate3d(0, 0, 0);
-        }
-        50% {
-            transform: translate3d(-50%, 0, 0);
-        }
-        100% {
-            transform: translate3d(0, 0, 0);
-        }
-        
-        
-    }
 
-    
+        .motion:hover {
+            animation: none;
+        }
 
+        @keyframes motion {
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+
+            50% {
+                transform: translate3d(-50%, 0, 0);
+            }
+
+            100% {
+                transform: translate3d(0, 0, 0);
+            }
+
+        }
     }
 
 
@@ -109,20 +107,21 @@
     @media @mobile {
         height: 100%;
         width: 100%;
+
         img {
             width: 50rem;
 
         }
-        
+
     }
 
-        
+
 
     @media @mobile-sm {
         width: 50rem;
     }
 
-    
+
 }
 
 //Стилизуем заоловки 

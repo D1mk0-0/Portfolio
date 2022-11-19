@@ -108,12 +108,26 @@
             </div>
             <!--Создалим блок с работами / портфолио. приравняем так же идендификатор -->
             <div class="portfolio" id="portfolio">
+                <div class="portfolio__col" data-cat="design">
+                    <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_glamurnenko">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images/glamurnenko__preview.jpg" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">Домашняя страница</div>
+                            <div class="work__title">
+                                GLAMURNENKO.RU
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <!--Структкрный блок-->
                 <div class="portfolio__col" data-cat="design">
                     <!--Будем стилизовать сами работы по отдельности-->
-                    <div class="work" data-modal="#modal_project_4">
+                    <div class="work" data-modal="#glassmorphizm__modal">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
-                        <img class="work__image" src="images/img_glassmorphism.jpg" alt="">
+                        <img class="work__image" src="images/glassmorphizm__preview.jpg" alt="">
                         <!--Дальше описане что ниже-->
                         <div class="work__content">
                             <div class="work__cat">HTML CSS</div>
@@ -473,6 +487,50 @@
         </div>
     </footer>
     <!--Модальные окна-->
+    <div class="modal" id="modal_glamurnenko">
+        <div class="modal__dialog">
+            <button class="modal__close" type="button" data-close>
+                <img src="images/close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="modal-work">
+                <div class="modal-work__preview">
+                    <div class="slide__downup">
+                        <img src="images/glamurnenko__modal__image.jpg" alt="#">
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">Гламурненько.ру</h3>
+                        <div class="modal-work__info">
+                            Ноябрь | 2022 
+                        </div>
+                    </div>
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-company">HTML CSS JS | LESS | Bootstrap 4 | jQuery | Fancybox | Адаптивная Верстка</div>
+                    </div>
+                    <div class="modal-work__client">
+                        <a href="https://d1mk0-0.github.io/testtasksoflending.github.io/" target="_blank" class="easyHref disFlex">
+                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Перейти на сайт</div>
+                        </a>
+                    </div>
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>Тестовое задание - верстка главной страницы сайта Glamurnenko.ru - стилиста Екатерины Маляровой.
+                        </p>
+                        <p>Для стилей применен фреймворк Bootstrap 4 и немного LESS'a. Всплывающий навбар в шапке, при скроле,
+                            реализован с помощью JS, и в блоке с отзывами при клике на изображение открывается галерея Fancybox.
+                            Для работы всего привязан jQuery.
+                        </p>
+                    </div>
+                    </div>
+                    <!--Закрывается modal-work__content-->
+                    </div>
+            <!--Закрывается modal-work-->
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
     <!--Первый блок с маской-->
     <!--Пропишем id-->
     <div class="modal" id="snake">
@@ -609,7 +667,7 @@
     <!--Закрывается modal-->
     <!--Модальое окно для третей работы-->
     <!--Пропишем id-->
-    <div class="modal" id="modal_project_4">
+    <div class="modal" id="glassmorphizm__modal">
         <!--Дальше уже само модержимое окна-->
         <div class="modal__dialog">
             <!--Кнопка закрыть. Добавим атрибут закрытия. Он будет получать доступ к родителю и закрывать его
@@ -693,7 +751,7 @@
                         </div>
                     </div>
                     <div class="modal-work__client">
-                            <a href="https://github.com/D1mk0-0/glassmorhpism" class="easyHref disFlex">
+                            <a href="https://github.com/D1mk0-0/glassmorhpism" target="_blank" class="easyHref disFlex">
                                 <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
                                 <div class="modal-work__client-title">GitHub</div>
                             </a>
