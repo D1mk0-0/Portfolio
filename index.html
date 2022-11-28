@@ -110,6 +110,20 @@
             <div class="portfolio" id="portfolio">
                 <div class="portfolio__col" data-cat="design">
                     <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_eatmeat">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images/eatmeat__preview.jpg" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">landing</div>
+                            <div class="work__title">
+                                EatMeat
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__col" data-cat="design">
+                    <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#modal_glamurnenko">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
                         <img class="work__image" src="images/glamurnenko__preview.jpg" alt="">
@@ -487,6 +501,86 @@
         </div>
     </footer>
     <!--Модальные окна-->
+    <div class="modal" id="modal_eatmeat">
+        <div class="modal__dialog">
+            <button class="modal__close" type="button" data-close>
+                <img src="images/close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="modal-work">
+                <div class="modal-work__preview">
+                    <div data-slider="slick">
+                        <!--1 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image1.jpg" alt="">
+                        </div>
+                        <!--2 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image2.jpg" alt="">
+                        </div>
+                        <!--3 слайдер-->
+                        <div>
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image3.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">EatMeat</h3>
+                        <div class="modal-work__info">
+                            Ноябрь | 2022
+                        </div>
+                    </div>
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-company">HTML CSS JS | SCSS | Swiper slide | Адаптивная Верстка
+                        </div>
+                    </div>
+                    <div class="modal-work__client">
+                        <a href="https://d1mk0-0.github.io/restaurant.github.io/" target="_blank"
+                            class="easyHref disFlex">
+                            <img src="images/website-logo.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Перейти на сайт</div>
+                        </a>
+                        <a href="https://github.com/D1mk0-0/restaurant.github.io" target="_blank"
+                            class="easyHref disFlex">
+                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Открыть на GitHub</div>
+                        </a>
+                    </div>
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>Верстка лендинга несуществующего ресторана EatMeat.
+                        </p>
+                        <p>
+                            Небольшой одностраничный сайт разработанный с помощью уроков. Для стилей применен
+                            препроцессор SASS, а точнее SCSS. Для повторяющихся значений (цветов, размеров,)
+                            применены переменные и "Миксины". Слайдеры в блоке "спецпредложения" и "меню"
+                            сделаны с помощью Swiper-слайлера. Блок "меню" так же построен на нативном JS для
+                            смены вкладок. Интегрированная карта Google расположена внизу. 
+                        </p>
+                    </div>
+                    <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
+                    <div class="modal-work__footer">
+                        <button class="modal-work__btn  modal-work__btn--prev  slickPrev" type="button">
+                            <!--Тут вставляем картинку со стрелочкой-->
+                            <img class="modal-work__btn  modal-work__btn--arr" src="images/arrow-left-s-svgrepo-com.svg"
+                                alt="">
+                            Назад
+                        </button>
+                        <button class="modal-work__btn  modal-work__btn--next slickNext" type="button">
+                            <!--И тут вставляем картинку со стрелочкой но уже после-->
+                            Вперед
+                            <img class="modal-work__btn  modal-work__btn--arr"
+                                src="images/arrow-right-s-svgrepo-com.svg" alt="">
+                        </button>
+                    </div>
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
+            <!--Закрывается modal-work-->
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
     <div class="modal" id="modal_glamurnenko">
         <div class="modal__dialog">
             <button class="modal__close" type="button" data-close>
@@ -503,30 +597,40 @@
                     <div class="modal-work__header">
                         <h3 class="modal-work__title">Гламурненько.ру</h3>
                         <div class="modal-work__info">
-                            Ноябрь | 2022 
+                            Ноябрь | 2022
                         </div>
                     </div>
                     <div class="modal-work__client">
-                        <div class="modal-work__client-company">HTML CSS JS | LESS | Bootstrap 4 | jQuery | Fancybox | Адаптивная Верстка</div>
+                        <div class="modal-work__client-company">HTML CSS JS | LESS | Bootstrap 4 | jQuery | Fancybox |
+                            Адаптивная Верстка</div>
                     </div>
                     <div class="modal-work__client">
-                        <a href="https://d1mk0-0.github.io/testtasksoflending.github.io/" target="_blank" class="easyHref disFlex">
-                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                        <a href="https://d1mk0-0.github.io/testtasksoflending.github.io/" target="_blank"
+                            class="easyHref disFlex">
+                            <img src="images/website-logo.svg" class="contact__info-icon" alt="#">
                             <div class="modal-work__client-title">Перейти на сайт</div>
+                        </a>
+                        <a href="https://github.com/D1mk0-0/testtasksoflending.github.io" target="_blank"
+                            class="easyHref disFlex">
+                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Открыть на GitHub</div>
                         </a>
                     </div>
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
-                        <p>Тестовое задание - верстка главной страницы сайта Glamurnenko.ru - стилиста Екатерины Маляровой.
+                        <p>Тестовое задание - верстка главной страницы сайта Glamurnenko.ru - стилиста Екатерины
+                            Маляровой.
                         </p>
-                        <p>Для стилей применен фреймворк Bootstrap 4 и немного LESS'a. Всплывающий навбар в шапке, при скроле,
-                            реализован с помощью JS, и в блоке с отзывами при клике на изображение открывается галерея Fancybox.
+                        <p>Для стилей применен фреймворк Bootstrap 4 и немного LESS'a. Всплывающий навбар в шапке, при
+                            скроле,
+                            реализован с помощью JS, и в блоке с отзывами при клике на изображение открывается галерея
+                            Fancybox.
                             Для работы всего привязан jQuery.
                         </p>
                     </div>
-                    </div>
-                    <!--Закрывается modal-work__content-->
-                    </div>
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
             <!--Закрывается modal-work-->
         </div>
         <!--Закрывается modal__dialog-->
@@ -751,10 +855,10 @@
                         </div>
                     </div>
                     <div class="modal-work__client">
-                            <a href="https://github.com/D1mk0-0/glassmorhpism" target="_blank" class="easyHref disFlex">
-                                <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
-                                <div class="modal-work__client-title">GitHub</div>
-                            </a>
+                        <a href="https://github.com/D1mk0-0/glassmorhpism" target="_blank" class="easyHref disFlex">
+                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Открыть на GitHub</div>
+                        </a>
                     </div>
                     <!--Затем идет описание-->
                     <div class="modal-work__text">
@@ -915,7 +1019,7 @@
                             <!--<div class="timeline__position">LA University, USA</div>-->
                             <div class="timeline__text">
                                 <p>Верстка и редактирование несложных страниц на HTML и CSS с использованием
-                                    препроцессора LESS.
+                                    препроцессора LESS, SCSS.
                                     Разработка простой логики
                                     на языках: JavaScript, JAVA, Python. Знание основ PHP.<br>
                                     Подключение и использование сторонних библиотек: JQuery, TelegramApi для Python,
