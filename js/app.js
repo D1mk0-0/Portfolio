@@ -184,3 +184,7 @@ $(function () {
 
       });
 });
+
+$(function(){
+    $("#includedContent").load("modal__eatmeat.html.html");
+  });

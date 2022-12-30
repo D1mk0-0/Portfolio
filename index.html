@@ -110,6 +110,20 @@
             <div class="portfolio" id="portfolio">
                 <div class="portfolio__col" data-cat="design">
                     <!--Будем стилизовать сами работы по отдельности-->
+                    <div class="work" data-modal="#modal_social-bagetBaton">
+                        <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
+                        <img class="work__image" src="images/bagetBaton__preview.jpg" alt="">
+                        <!--Дальше описане что ниже-->
+                        <div class="work__content">
+                            <div class="work__cat">React</div>
+                            <div class="work__title">
+                                Социальная сеть
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio__col" data-cat="design">
+                    <!--Будем стилизовать сами работы по отдельности-->
                     <div class="work" data-modal="#modal_eatmeat">
                         <!--Катинка портфолио (ФОТО ЗАРАНЕЕ ОТРЕДАКТРОВАТЬ, РАЗРЕШЕНЕ УБРАТЬ)-->
                         <img class="work__image" src="images/eatmeat__preview.jpg" alt="">
@@ -501,6 +515,61 @@
         </div>
     </footer>
     <!--Модальные окна-->
+    <div class="modal" id="modal_social-bagetBaton">
+        <div class="modal__dialog">
+            <button class="modal__close" type="button" data-close>
+                <img src="images/close_mono.svg" alt="Закрыть">
+            </button>
+            <div class="modal-work">
+                <div class="modal-work__preview">
+                    <div data-slider="slick">
+                        <!--1 слайдер-->
+                        <div>
+                            <img class="modal-work__photo"
+                                src="images/img_prewiev_bagetBaton/bagetBaton__modal__image.jpg" alt="">
+                        </div>
+                    </div>
+                </div>
+                <!--Правая часть-->
+                <div class="modal-work__content">
+                    <div class="modal-work__header">
+                        <h3 class="modal-work__title">Социальная сеть</h3>
+                        <div class="modal-work__info">
+                            Декабрь | 2022
+                        </div>
+                    </div>
+                    <div class="modal-work__client">
+                        <div class="modal-work__client-company">React | Redux | Node.js
+                        </div>
+                    </div>
+                    <div class="modal-work__client">
+                        <a href="https://github.com/D1mk0-0/ReactBakery" target="_blank" class="easyHref disFlex">
+                            <img src="images/github-svgrepo-com.svg" class="contact__info-icon" alt="#">
+                            <div class="modal-work__client-title">Открыть на GitHub</div>
+                        </a>
+                    </div>
+                    <!--Затем идет описание-->
+                    <div class="modal-work__text">
+                        <p>
+                            Проект забавной социальной сети с настоящим функционалом: <strong> «Багет — Батон» - для
+                                булочек и батонов</strong>.
+                        </p>
+                        <p>
+                            Находится в стадии разработки и, соответственно, изучения React/Redux. На данный момент, как
+                            компоненты, реализованы страницы Profile и Dialogs. Так же все стили CSS импортированы как
+                            модули. Для переключения вкладок установлен пакет React Router DOM. Сообщения получены из,
+                            пока локального, объекта через аргумент props.
+                            Сейчас проект существует только как репозиторий на GitHub, но все зависимости в package.json
+                            прописаны и его можно загрузить и установить.
+                        </p>
+                    </div>
+                </div>
+                <!--Закрывается modal-work__content-->
+            </div>
+            <!--Закрывается modal-work-->
+        </div>
+        <!--Закрывается modal__dialog-->
+    </div>
     <div class="modal" id="modal_eatmeat">
         <div class="modal__dialog">
             <button class="modal__close" type="button" data-close>
@@ -511,15 +580,18 @@
                     <div data-slider="slick">
                         <!--1 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image1.jpg" alt="">
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image1.jpg"
+                                alt="">
                         </div>
                         <!--2 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image2.jpg" alt="">
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image2.jpg"
+                                alt="">
                         </div>
                         <!--3 слайдер-->
                         <div>
-                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image3.jpg" alt="">
+                            <img class="modal-work__photo" src="images/img_prewiev_eatmeat/eatmeat__modal__image3.jpg"
+                                alt="">
                         </div>
                     </div>
                 </div>
@@ -556,7 +628,7 @@
                             препроцессор SASS, а точнее SCSS. Для повторяющихся значений (цветов, размеров,)
                             применены переменные и "Миксины". Слайдеры в блоке "спецпредложения" и "меню"
                             сделаны с помощью Swiper-слайлера. Блок "меню" так же построен на нативном JS для
-                            смены вкладок. Интегрированная карта Google расположена внизу. 
+                            смены вкладок. Интегрированная карта Google расположена внизу.
                         </p>
                     </div>
                     <!--Блок с кнопками в окне preview (ВОЗЖНО УБЕРУ)-->
